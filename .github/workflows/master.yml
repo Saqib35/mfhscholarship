@@ -19,6 +19,4 @@ jobs:
           host: ftp.mfhscholarship.com
           user: u426145892.admin
           password: Codehubsoftuk7866@
-          localDir: "dist"
-          remoteDir: "www"
-          options: "--delete --ascii"
+         
