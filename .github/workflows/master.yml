@@ -1,20 +1,24 @@
 on:
-   push:
-   branches:
-   -main
+  push:
+    branches:
+      - main
+
 name: Deploy via ftp
+
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Upload ftp
-      uses: sebastianpopp/ftp-action@releases/v2
-      with:
-         host: ${{ secrets.FTP_HOST }}
-         user: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "dist"
-        remoteDir: "www"
-        options: "--delete --asci"
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ftp.mfhscholarship.com
+          user: u426145892.admin
+          password: Codehubsoftuk7866@
+          localDir: "dist"
+          remoteDir: "www"
+          options: "--delete --ascii"
