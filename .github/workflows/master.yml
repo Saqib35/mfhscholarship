@@ -12,9 +12,9 @@ jobs:
     - name: Upload ftp
       uses: sebastianpopp/ftp-action@releases/v2
       with:
-        host: 'ftp.mfhscholarship.com'
-        user: 'u426145892.admin'
-        password: 'Codehubsoftuk7866@'
+         host: ${{ secrets.FTP_HOST }}
+         user: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
         localDir: "dist"
         remoteDir: "www"
         options: "--delete --asci"
