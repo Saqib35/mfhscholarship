@@ -8,13 +8,24 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.min.css')}}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/nice-select.min.css')}}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}" />
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "524c15cf-c4d6-4482-9fd0-3d2e7a9133f1",
+     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+     <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+     OneSignal.init({
+          appId: "524c15cf-c4d6-4482-9fd0-3d2e7a9133f1",
         });
-    });
-    </script>
+      });
+  OneSignal.push(function() {
+  OneSignal.on('subscriptionChange', function(isSubscribed) {
+    if (isSubscribed) {
+        
+      OneSignal.getUserId(function(userId) {
+      });
+    }else{
+        console.log("Thanks a lot!! unsubscribed");
+    }
+  });
+});
+   </script>
     
