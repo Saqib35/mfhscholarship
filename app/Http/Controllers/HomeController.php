@@ -46,7 +46,7 @@ class HomeController extends Controller
         $degree = AddDegree::where('degree_slug', $degreeSlug)->first();
 
         if ($degree) {
-                $banner_img="";
+                $banner_img=$degreeSlug;
                 $slug=$degreeSlug;
                 $AddScholarship=AddScholarship::where('scholarship_degree','=',$degreeSlug)->paginate(9);
 
@@ -54,7 +54,7 @@ class HomeController extends Controller
 
                 if($request->slug=='scholarship-lists')
                 {
-                    $banner_img="";
+                    $banner_img="all-country";
                     $slug="Scholarship Lists";
                     $AddScholarship=AddScholarship::paginate(9);
                  }

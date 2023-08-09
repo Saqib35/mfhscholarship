@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SubscriberController;
+
 
 
 
@@ -41,8 +43,15 @@ Route::get('category/{slug?}/', [HomeController::class, 'showscholarshipCountry'
 Route::get('about', function () {return view('about');});
 Route::get('contact', function () {return view('contact');});
 Route::get('faq', function () {return view('faq');});
+Route::get('disclaimer', function () {return view('disclaimer');});
+
+
+
 
 Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
+
+Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
+
 Route::fallback(function () { return view('errors.404');});
 
 

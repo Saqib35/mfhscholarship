@@ -45,7 +45,7 @@
 
 @section('main')
     <!-- Breadcrumb Area Start -->
-    <div class="section breadcrumb-area bg-bright" style="background-image: url('{{ asset('assets/countryBanner/US.jpg') }}');">
+    <div class="section breadcrumb-area bg-bright" style="background-image: url('{{ asset('assets/countryBanner/'.$banner_img.'.webp') }}');background-size: cover;background-position: center;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">

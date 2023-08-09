@@ -24,10 +24,10 @@
                         <div class="single-footer-widget">
                             <h2 class="widget-title">Useful Links</h2>
                             <ul class="widget-list">    
-                                 <li><a href="about.php">About</a></li>
-                                 <li><a href="contact.php">Contact</a></li>
-                                 <li><a href="about.php">FAQ</a></li>
-                                 <li><a href="about.php">Disclaimer</a></li>
+                                 <li><a href="{{ url('about') }}">About</a></li>
+                                 <li><a href="{{ url('contact') }}">Contact</a></li>
+                                 <li><a href="{{ url('faq') }}">FAQ</a></li>
+                                 <li><a href="{{ url('disclaimer') }}">Disclaimer</a></li>
                                  <li><a href="about.php">Privacy Policy</a></li>
                                  <li><a href="about.php">Terms & Conditions</a></li>
                                 
@@ -50,16 +50,12 @@
                             <h2 class="widget-title">Subcrible Newsletter</h2>
                             <div class="widget-body">
                                 <div class="newsletter-form-wrap pt-1">
-                                    <form id="mc-form" class="mc-form">
+                                    <form id="subCrible" class="mc-form">
                                         <input type="email" id="mc-email" class="form-control email-box" placeholder="demo@example.com" name="EMAIL">
                                         <button id="mc-submit" class="newsletter-btn" type="submit">Send</button>
                                     </form>
                                     <!-- mailchimp-alerts Start -->
-                                    <div class="mailchimp-alerts text-centre">
-                                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                                        <div class="mailchimp-success text-success"></div><!-- mailchimp-success end -->
-                                        <div class="mailchimp-error text-danger"></div><!-- mailchimp-error end -->
-                                    </div>
+                                    
                                     <!-- mailchimp-alerts end -->
                                 </div>
                                 <!-- Newsletter Form End -->

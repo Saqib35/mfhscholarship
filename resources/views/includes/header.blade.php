@@ -14,7 +14,7 @@
                         <!-- Header Logo Start -->
                         <div class="col-lg-3 col-md-4 col-6">
                             <div class="header-logo">
-                                <a href="{{ url('/') }}"><img src="{{ asset('assets/logo.svg') }}" alt="Site Logo" /></a>
+                                <a href="{{ url('/') }}"><img src="{{ asset('assets/logo.png') }}" alt="Site Logo" /></a>
                             </div>
                         </div>
                         <!-- Header Logo End -->

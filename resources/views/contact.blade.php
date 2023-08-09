@@ -14,7 +14,7 @@
                     <div class="breadcrumb-wrapper">
                         <h2 class="breadcrumb-title">Contact Us</h2>
                         <ul>
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
                             <li>Contact Us</li>
                         </ul>
                     </div>
@@ -89,20 +89,13 @@
                     </div>
                     <!-- Section Title End -->
                     <div class="contact-content">
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
+                        <p>If you have any query, feel free to contact us</p>
                         <address class="contact-block">
                             <ul>
-                                <li><i class="fa fa-fax"></i> Your address goes here</li>
                                 <li><i class="fa fa-phone"></i> <a href="tel:123-123-456-789">123 123 456 789</a></li>
-                                <li><i class="fa fa-envelope-o"></i> <a href="mailto:demo@example.com">demo@example.com </a></li>
+                                <li><i class="fa fa-envelope-o"></i> <a href="mailto:mfhscholarship@gmail.com">mfhscholarship@gmail.com</a></li>
                             </ul>
                         </address>
-
-                        <div class="working-time">
-                            <h6 class="title">Working Hours</h6>
-                            <p>Monday – Saturday:08AM – 22PM</p>
-                        </div>
-
                     </div>
                 </div>
             </div>
