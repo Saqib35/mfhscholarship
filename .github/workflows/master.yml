@@ -13,10 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Identify changed files
+        id: changed-files
+        run: |
+          # Get the list of changed files (excluding deleted files)
+          CHANGED_FILES=$(git diff --name-only --diff-filter=d ${{ github.event.before }} ${{ github.sha }})
+
+          # Set the output variable for the list of changed files
+          echo "::set-output name=files::$CHANGED_FILES"
+
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: ftp.mfhscholarship.com
           user: u426145892.admin
           password: Codehubsoftuk7866@
-         
+          local-dir: ${{ github.workspace }}  # Upload the entire workspace
+          # Only include changed files
+          include: ${{ steps.changed-files.outputs.files }}
