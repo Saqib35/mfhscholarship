@@ -14,3 +14,5 @@
     <script src="{{ asset('assets/js/plugins/lightgallery-all.min.js')}}"></script>
     <!--Main JS-->
     <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/sweet.js')}}"></script>
+    

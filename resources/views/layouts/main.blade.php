@@ -36,23 +36,37 @@
             e.preventDefault();
            
             var email = $('#mc-email').val();
-           
+            
+            if(email=="")
+            {
+                Swal.fire(
+                'Error',
+                'Add E-mail Address',
+                'error'
+                );
+                return "";
+            }
+
             $.ajax({
                 type: 'POST',
                 url: '{{ route("subscribe") }}',
-                // dataType: 'json', // The expected data type
-
                 data: {
                     '_token': '{{ csrf_token() }}',
                     'email': email
                 },
                 success: function (response) {
-                    alert(432432432);
-                    $('#subscribeMessage').text(response.message);
+                    Swal.fire(
+                    'Thank You',
+                    'Subcribled Successfully',
+                    'success'
+                    );
                 },
                 error: function (xhr) {
-                    alert(999999999);
-                    $('#subscribeMessage').text(xhr.responseJSON.errors.email[0]);
+                    Swal.fire(
+                    'Already Subcribled',
+                    'Thank you',
+                    'error'
+                    );
                 }
             });
         });
