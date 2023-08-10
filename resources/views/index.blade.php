@@ -2,6 +2,23 @@
 
 @section('css')
 <title>MFH Scholarship – Worldwide Scholarships and Internships at One Place</title>
+    <meta name="description" content="description"/>
+    <meta name="robots" content="follow, index"/>
+    <link rel="canonical" href="{{  Request::fullUrl() }}"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="MFH Scholarship – Worldwide Scholarships and Internships at One Place"/>
+    <meta property="og:description" content="description"/>
+    <meta property="og:url" content="{{  Request::fullUrl() }}"/>
+    <meta property="og:site_name" content="MFH Scholarship"/>
+    <meta property="og:image" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:width" content="512"/>
+    <meta property="og:image:height" content="512"/>
+    <meta property="og:image:alt" content="MFH Scholarship"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+
+
 @endsection
 
 @section('main')
@@ -140,7 +157,7 @@
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                            <i class="ti-truck"></i>
+                         <img src="{{ asset('assets/icon/scholarship.webp') }}" width="35px">    
                         </div>
                         <!-- CTA Icon End -->
 
@@ -161,7 +178,7 @@
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                            <i class="ti-headphone-alt"></i>
+                            <img src="{{ asset('assets/icon/internship.webp') }}" width="35px">
                         </div>
                         <!-- CTA Icon End -->
 
@@ -181,7 +198,7 @@
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                            <i class="ti-bar-chart"></i>
+                         <img src="{{ asset('assets/icon/document.webp') }}" width="35px">
                         </div>
                         <!-- CTA Icon End -->
 
@@ -210,96 +227,57 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
-
-                <div class="col mb-8" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single scholarship Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- scholarship Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details-sidebar.php">
-                                <img class="fit-image" src="assets/images/blog/medium-size/1.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- scholarship Thumb End -->
-
-                        <!-- scholarship Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="javascript: void(0)">Admin</a></li>
-                                    <li><span>27, Jan, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details-sidebar.php">How to take care of your fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details-sidebar.php">Read More</a>
-                        </div>
-                        <!-- scholarship Content End -->
-
+            <div class="container mt-5 mb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="pagination justify-content-end">
+                        <a href="{{ url('category/scholarship-lists') }}"  class="btn"  style="background: #F6AB49;color: #fff;">View All</a>
+                        </ul>
                     </div>
-                    <!-- Single Blog End -->
                 </div>
-
-
             </div>
+            <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
+               @foreach($latestScholarships as $AddScholarships)
+                    <div class="col mb-8 " data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Single scholarship Start -->
+                        <div  style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+                        <div class="single-blog-wrapper" >
+
+                            <!-- scholarship Thumb Start -->
+                            <div class="blog-thumb thumb-effect">
+                                <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Blog Image">
+                                </a>
+                            </div>
+                            <!-- scholarship Thumb End -->
+
+                            <!-- scholarship Content Start -->
+                            <div class="blog-content p-3">
+                                <div class="blog-meta">
+                                    <ul>
+                                        <!-- <li><span>By</span><a href="javascript: void(0)">Admin</a></li> -->
+                                        <li><span>{{ $AddScholarships->created_at->format('F d, Y') }}</span></li>
+                                    </ul>
+                                </div>
+                                <h2 class="blog-title"><a href="{{ url($AddScholarships->scholarship_slug) }}">{{ $AddScholarships->scholarship_name; }}</a></h2>
+                                <p>{{ $AddScholarships->scholarship_description; }}</p>
+                                <a class="more-link" href="{{ url($AddScholarships->scholarship_slug) }}">Read More</a>
+                            </div>
+                            <!-- scholarship Content End -->
+
+                        </div>
+                        </div>
+                        <!-- Single Blog End -->
+                    </div>
+                 @endforeach
+                
+            </div>
+            
 
         </div>
     </div>
 
-    
-    <div class="section section-margin-bottom mt-5">
-        <div class="container">
-
-            <div class="row" data-aos="fade-up" data-aos-duration="1000">
-                <div class="col-12">
-                    <div class="section-title text-center">
-                        <h2 class="title" style="color:#F6AB49;font-weight:bold">Featured Scholarships</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
-
-                <div class="col mb-8" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
-
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details-sidebar.php">
-                                <img class="fit-image" src="assets/images/blog/medium-size/1.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="javascript: void(0)">Admin</a></li>
-                                    <li><span>27, Jan, 2021</span></li>
-                                </ul>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details-sidebar.php">How to take care of your fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details-sidebar.php">Read More</a>
-                        </div>
-                        <!-- Blog Content End -->
-
-                    </div>
-                    <!-- Single Blog End -->
-                </div>
-
-             
-            </div>
-
-        </div>
-    </div>
-    
-
+ 
     <div class="section section-margin-bottom mt-5">
         <div class="container">
 
@@ -310,43 +288,53 @@
                     </div>
                 </div>
             </div>
-
+            <div class="container mt-5 mb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="pagination justify-content-end">
+                        <a href="{{ url('scholarships-by-countries') }}"  class="btn"  style="background: #F6AB49;color: #fff;">View All</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
 
-                <div class="col mb-8" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog-wrapper">
+                
+                @foreach($polpularScholarships as $AddScholarships)
+                    <div class="col mb-8 " data-aos="fade-up" data-aos-duration="1000">
+                        <!-- Single scholarship Start -->
+                        <div  style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+                        <div class="single-blog-wrapper" >
 
-                        <!-- Blog Thumb Start -->
-                        <div class="blog-thumb thumb-effect">
-                            <a class="image" href="blog-details-sidebar.php">
-                                <img class="fit-image" src="assets/images/blog/medium-size/1.jpg" alt="Blog Image">
-                            </a>
-                        </div>
-                        <!-- Blog Thumb End -->
-
-                        <!-- Blog Content Start -->
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <ul>
-                                    <li><span>By</span><a href="javascript: void(0)">Admin</a></li>
-                                    <li><span>27, Jan, 2021</span></li>
-                                </ul>
+                            <!-- scholarship Thumb Start -->
+                            <div class="blog-thumb thumb-effect">
+                                <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Blog Image">
+                                </a>
                             </div>
-                            <h2 class="blog-title"><a href="blog-details-sidebar.php">How to take care of your fish</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                            <a class="more-link" href="blog-details-sidebar.php">Read More</a>
+                            <!-- scholarship Thumb End -->
+
+                            <!-- scholarship Content Start -->
+                            <div class="blog-content p-3">
+                                <div class="blog-meta">
+                                    <ul>
+                                        <!-- <li><span>By</span><a href="javascript: void(0)">Admin</a></li> -->
+                                        <li><span>{{ $AddScholarships->created_at->format('F d, Y') }}</span></li>
+                                    </ul>
+                                </div>
+                                <h2 class="blog-title"><a href="{{ url($AddScholarships->scholarship_slug) }}">{{ $AddScholarships->scholarship_name; }}</a></h2>
+                                <p>{{ $AddScholarships->scholarship_description; }}</p>
+                                <a class="more-link" href="{{ url($AddScholarships->scholarship_slug) }}">Read More</a>
+                            </div>
+                            <!-- scholarship Content End -->
+
                         </div>
-                        <!-- Blog Content End -->
-
+                        </div>
+                        <!-- Single Blog End -->
                     </div>
-                    <!-- Single Blog End -->
-                </div>
-
+                 @endforeach  
                
-
             </div>
-
         </div>
     </div>
    

@@ -8,16 +8,7 @@ use App\Http\Controllers\SubscriberController;
 
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 
 Route::get('/clear', function () {
@@ -28,15 +19,13 @@ Route::get('/clear', function () {
     return "Successfully Cleared";
   });
   
-  
 
-
-Route::get('/', function () {return view('index');});
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 Route::get('404', function () {return view('404');});
 Route::get('blog-details', function () {return view('blog-details-sidebar');});
 Route::get('scholarships-by-countries/', [HomeController::class, 'scholarshipByCountry']);
 Route::get('category/{slug?}/', [HomeController::class, 'showscholarshipCountry']);
+Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
 
 
 
@@ -44,23 +33,16 @@ Route::get('about', function () {return view('about');});
 Route::get('contact', function () {return view('contact');});
 Route::get('faq', function () {return view('faq');});
 Route::get('disclaimer', function () {return view('disclaimer');});
-
-
-
-
+Route::get('privacy-policy', function () {return view('privacy-policy');});
+Route::get('terms-of-use', function () {return view('terms-of-use');});
 Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
-
-Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
-
 Route::fallback(function () { return view('errors.404');});
 
 
 
 
 // admin route
-
 Route::group(['middleware'=>['IsLogin']],function () {
-
 Route::get('panel/admin/login', function () {return view('admin.login');})->name('panel.admin.login');
 Route::get('panel/admin/home', function () {return view('admin.index');})->name('panel.admin.home');
 Route::get('panel/admin/show-country', [AdminController::class, 'showCountry'])->name('show-country');
@@ -74,10 +56,6 @@ Route::get('panel/admin/del-degree', [AdminController::class, 'delDegree'])->nam
 Route::get('panel/admin/del-delscholarship', [AdminController::class, 'delScholarship'])->name('del-delscholarship');
 Route::post('upload', [AdminController::class, 'upload'])->name('upload');
 Route::post('add-scholarship', [AdminController::class, 'Addcholarship']);
-
-
-
-
 });
 
 // later use when register work start

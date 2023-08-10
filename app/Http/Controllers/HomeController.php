@@ -28,7 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $latestScholarships = AddScholarship::orderBy('created_at', 'desc')->paginate(6);
+        $statusValues = ['scholarships-in-canada', 'scholarships-in-united-states', 'scholarships-in-australia','scholarships-in-china','scholarships-in-finland']; // Array of status values
+        $polpularScholarships = AddScholarship::whereIn('scholarship_country', $statusValues)->orderBy('created_at', 'desc')->paginate(6);
+
+        return view('index',['latestScholarships'=>$latestScholarships,'polpularScholarships'=>$polpularScholarships]);
     }
 
     public function scholarshipByCountry()

@@ -28,8 +28,8 @@
                                  <li><a href="{{ url('contact') }}">Contact</a></li>
                                  <li><a href="{{ url('faq') }}">FAQ</a></li>
                                  <li><a href="{{ url('disclaimer') }}">Disclaimer</a></li>
-                                 <li><a href="about.php">Privacy Policy</a></li>
-                                 <li><a href="about.php">Terms & Conditions</a></li>
+                                 <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
+                                 <li><a href="{{ url('terms-of-use') }}">Terms & Conditions</a></li>
                                 
                             </ul>
                         </div>

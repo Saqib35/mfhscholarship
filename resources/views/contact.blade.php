@@ -1,21 +1,37 @@
 @extends('layouts.main')
 
 @section('css')
+<title>MFH Scholarship – Worldwide Scholarships and Internships at One Place</title>
+    <meta name="description" content="description"/>
+    <meta name="robots" content="follow, index"/>
+    <link rel="canonical" href="{{  Request::fullUrl() }}"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="MFH Scholarship – Worldwide Scholarships and Internships at One Place"/>
+    <meta property="og:description" content="description"/>
+    <meta property="og:url" content="{{  Request::fullUrl() }}"/>
+    <meta property="og:site_name" content="MFH Scholarship"/>
+    <meta property="og:image" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:width" content="512"/>
+    <meta property="og:image:height" content="512"/>
+    <meta property="og:image:alt" content="MFH Scholarship"/>
+    <meta property="og:image:type" content="image/jpeg"/>
 
 @endsection
 
 @section('main')
     
     <!-- Breadcrumb Area Start -->
-    <div class="section breadcrumb-area bg-bright">
+    <div class="section breadcrumb-area bg-bright" style="background-image: url('{{ asset('assets/countryBanner/contact-us.webp') }}');background-size: cover;background-position: center;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title">Contact Us</h2>
+                        <h1 class="breadcrumb-title text-white">Contact Us</h1>
                         <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>Contact Us</li>
+                            <li><a href="{{ url('/') }}" class="text-white">Home</a></li>
+                            <li class="text-white">Contact Us</li>
                         </ul>
                     </div>
                 </div>
