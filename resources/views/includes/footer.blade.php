@@ -13,8 +13,8 @@
                                 <a title="Twitter" href="javascript: void(0)/"><i class="icon-social-twitter"></i></a>
                                 <a title="Instagram" href="javascript: void(0)/"><i class="icon-social-instagram"></i></a>
                                 <a title="Linkedin" href="javascript: void(0)/"><i class="icon-social-linkedin"></i></a>
-                                <a title="Skype" href="javascript: void(0)/"><i class="icon-social-skype"></i></a>
-                                <a title="Dribble" href="javascript: void(0)/"><i class="icon-social-dribbble"></i></a>
+                                <a title="Facebook" href="javascript: void(0)/"><i class="icon-social-facebook"></i></a>
+                                
                             </div>
                             
                             <!-- Social Link End -->

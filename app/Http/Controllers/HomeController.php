@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Countires;
 use App\Models\AddScholarship;
 use App\Models\AddDegree;
+use App\Models\Blogs;
+use DB;
 
 
 
@@ -38,8 +40,19 @@ class HomeController extends Controller
     public function scholarshipByCountry()
     {
 
-        $countires=Countires::get();
+        try {
+            $countires = DB::table('countries')
+                ->join('add_scholarships', 'countries.slug', '=', 'add_scholarships.scholarship_country')
+                // ->where('add_scholarships.scholarship_country', '>', 0)
+                ->select('countries.*')
+                ->distinct()
+                ->get();
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+        // $countires=Countires::get();
         return view('scholarship-by-country',['countires'=>$countires]);
+
     }
 
     public function showscholarshipCountry(REQUEST $request)
@@ -69,7 +82,21 @@ class HomeController extends Controller
                        $slug=$request->slug;
                        $AddScholarship=AddScholarship::where('scholarship_country','=',$degreeSlug)->paginate(9);
                     }else{
-                        abort(404);
+
+
+                        if($degreeSlug=='internships')
+                        {
+
+                           $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
+                           return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug]);
+                             
+                        }else{
+              
+                          abort(404);
+                
+                        } 
+
+                       
                     }
                 }
 
@@ -79,6 +106,39 @@ class HomeController extends Controller
     
     }
 
+    public function search(REQUEST $request)
+    {
+
+
+        $slug = $request->input('keyword');
+        $banner_img="CN";
+        $AddScholarship = AddScholarship::where('scholarship_name', 'LIKE', "%$slug%")->paginate(9);
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img]);
+    
+    }
+
+    public function showBlogHome(REQUEST $request)
+    {
+
+
+        $degreeSlug = $request->slug;
+        
+        if ($degreeSlug=='application-resources' || $degreeSlug=='scholarships-and-study' || $degreeSlug=='employment-and-profession') {
+              
+                $slug=$degreeSlug;
+                $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
+
+        } else {
+        
+            abort(404);
+        
+        }
+
+        return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug]);
+    
+    }
+    
+
     public function ShowScholarDetails(REQUEST $request)
     {
         
@@ -87,14 +147,23 @@ class HomeController extends Controller
 
 
         if ($AddScholarship) {
-
-           return view('scholarship-details-show',['AddScholarship'=>$AddScholarship,'slug'=>$slug]);
-  
+            $banner_img = $AddScholarship->scholarship_banner_img;
+            return view('scholarship-details-show',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img]);
                
         } else {
-          
+ 
+            $blogs = Blogs::where('blog_slug', $slug)->first();
+
+          if($blogs)
+          {
+                return view('blog-details-show',['AddScholarship'=>$blogs,'slug'=>$slug]);
+
+          }else{
+
             abort(404);
   
+          } 
+          
         }
 
     }

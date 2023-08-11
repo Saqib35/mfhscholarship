@@ -12,7 +12,7 @@
                     <div class="row align-items-center position-relative">
 
                         <!-- Header Logo Start -->
-                        <div class="col-lg-3 col-md-4 col-6">
+                        <div class="col-lg-2 col-md-4 col-6">
                             <div class="header-logo">
                                 <a href="{{ url('/') }}"><img src="{{ asset('assets/logo.png') }}" alt="Site Logo" /></a>
                             </div>
@@ -20,7 +20,7 @@
                         <!-- Header Logo End -->
 
                         <!-- Header Menu Start -->
-                        <div class="col-lg-6 d-none d-lg-block">
+                        <div class="col-lg-8 d-none d-lg-block">
                             <div class="main-menu">
                                 <ul>
                                     <li class="has-children">
@@ -42,6 +42,17 @@
                                         @endforeach
                                         </ul>
                                     </li>
+                                    <li class="has-children">
+                                     <a href="{{ url('category/internships') }}" class="@if(request()->is('category/blog/internships')) active @endif">Internships</a>
+                                   </li>
+                                    <li class="has-children">
+                                        <a href="javascript: void(0)">Blogs</a>
+                                        <ul class="sub-menu">
+                                            <li><a class="@if(request()->is('category/blog/application-resources')) active-tab @endif" href="{{ url('category/blog/application-resources'); }}">Applications Documents</a></li>
+                                            <li><a class="@if(request()->is('category/blog/scholarships-and-study')) active-tab @endif" href="{{ url('category/blog/scholarships-and-study'); }}">Scholarships / Study</a></li>
+                                            <li><a class="@if(request()->is('category/blog/employment-and-profession')) active-tab @endif" href="{{ url('category/blog/employment-and-profession'); }}">Employment / Profession</a></li>
+                                        </ul>
+                                    </li>
                                     
                                     <li class="has-children">
                                         <a href="{{ url('about') }}"  class="@if(request()->is('about')) active-tab @endif" >About</a>
@@ -55,7 +66,7 @@
                         <!-- Header Menu End -->
 
                         <!-- Header Action Start -->
-                        <div class="col-lg-3 col-md-8 col-6">
+                        <div class="col-lg-2 col-md-8 col-6">
                             <div class="header-actions">
 
                                 <!-- Header Action Search Button Start -->
@@ -65,17 +76,14 @@
                                         <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
                                     </div>
                                     <!-- Search Form and Button Start -->
-                                    <form class="header-search-form" action="#">
-                                        <input type="text" class="header-search-input" placeholder="Search Scholarship">
+                                    <form class="header-search-form" action="{{ route('search') }}">
+                                        <input type="text" name="keyword" class="header-search-input" placeholder="Search Scholarship">
                                         <button class="header-search-button"><i class="icon-magnifier icons"></i></button>
                                     </form>
                                     <!-- Search Form and Button End -->
 
                                 </div>
                                 <!-- Header Action Search Button End -->
-
-
-                                
 
                                 <!-- Mobile Menu Hambarger Action Button Start -->
                                 <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">

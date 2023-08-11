@@ -28,12 +28,12 @@
         <div class="row">
             @foreach($countires as $countires)
             <div class="col-lg-3  col-sm-4  col-6 p-5">
-                <a href="{{ url('category/'.$countires['slug'].'/') }}" target="_blank">
+                <a href="{{ url('category/'.$countires->slug.'/') }}" target="_blank">
                   <div style="height:150px;width:100%" class="hover-zoom">
-                     <img src="{{ asset('assets/flag/'.$countires['country_code'].'.webp') }}" style="height:100%;width:100%;border:3px solid #e9e9e9"  >
+                     <img src="{{ asset('assets/flag/'.$countires->country_code.'.webp') }}" style="height:100%;width:100%;border:3px solid #e9e9e9"  >
                   </div>
              
-                <strong> {{ $countires['country_name']; }}</strong>
+                <strong> {{ $countires->country_name; }}</strong>
                 </a>
             </div>
             @endforeach

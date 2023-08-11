@@ -25,7 +25,9 @@ Route::get('404', function () {return view('404');});
 Route::get('blog-details', function () {return view('blog-details-sidebar');});
 Route::get('scholarships-by-countries/', [HomeController::class, 'scholarshipByCountry']);
 Route::get('category/{slug?}/', [HomeController::class, 'showscholarshipCountry']);
+Route::get('category/blog/{slug?}', [HomeController::class, 'showBlogHome']);
 Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
+Route::get('search', [HomeController::class, 'search'])->name('search');
 
 
 
@@ -48,10 +50,8 @@ Route::get('panel/admin/home', function () {return view('admin.index');})->name(
 Route::get('panel/admin/show-country', [AdminController::class, 'showCountry'])->name('show-country');
 Route::get('panel/admin/show-subcribled', [AdminController::class, 'showSubcribled'])->name('show-subcribled');
 Route::get('panel/admin/add-category', function () {return view('admin.add-category');})->name('panel.admin.add-category');
-
 Route::get('panel/admin/add-blog', function () {return view('admin.add-blog');})->name('panel.admin.add-blog');
 Route::get('panel/admin/show-blog', [AdminController::class, 'showBlog'])->name('show-blog');
-
 Route::get('panel/admin/add-degree', [AdminController::class, 'addDegree'])->name('add-degree');
 Route::get('panel/admin/show-category', [AdminController::class, 'showCategory'])->name('panel.admin.show-category');
 Route::get('panel/admin/add-scholarship', [AdminController::class, 'addScholarShip'])->name('panel.admin.add-scholarship');
