@@ -22,7 +22,7 @@
 
                 <!-- start page title -->
                 <?php
-                $maintitle = "Bloggerworld";
+                $maintitle = "MFH Scholarship";
                 $title = "Show Degree";
                 ?>
                 @include ('admin.layouts.breadcrumb')

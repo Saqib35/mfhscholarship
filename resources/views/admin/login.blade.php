@@ -20,19 +20,19 @@
                     <div class="w-100">
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center">
-                                <a href="index.php" class="d-block auth-logo">
-                                    <img src="{{ asset('assets/logo.svg')}}" alt="" height="70"> <span class="logo-txt"></span>
+                                <a href="{{ url('/') }}" class="d-block auth-logo">
+                                    <img src="{{ asset('assets/logo.png')}}" alt="" height="70"> <span class="logo-txt"></span>
                                 </a>
                             </div>
                             <div class="auth-content my-auto">
                                 <div class="text-center">
                                     <h5 class="mb-0">Welcome Back !</h5>
-                                    <p class="text-muted mt-2">Sign in to continue to Bloggerworld.</p>
+                                    <p class="text-muted mt-2">Sign in to continue to MFH Scholarship.</p>
                                 </div>
                                 <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                     <div class="form-floating form-floating-custom mb-4">
-                                        <input type="text" class="form-control " id="\username" name="email" value="example@gmail.com" placeholder="Enter User Name">
+                                        <input type="text" class="form-control " id="\username" name="email"  placeholder="Enter User Name">
                                         
 
                                         <label for="input-username">Username</label>
@@ -62,7 +62,7 @@
                             <div class="mt-4 mt-md-5 text-center">
                                 <p class="mb-0">© <script>
                                         document.write(new Date().getFullYear())
-                                    </script> Blogerworld
+                                    </script> MFH Scholarship
                             </div>
                         </div>
                     </div>

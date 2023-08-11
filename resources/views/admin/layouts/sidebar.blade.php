@@ -9,7 +9,7 @@
                         <li>
                             <a href="{{ url('panel/admin/home') }}">
                                 <i data-feather="home"></i>
-                                <span class="badge rounded-pill bg-soft-success text-success float-end">100+</span>
+                                <span class="badge rounded-pill bg-soft-success text-success float-end">New</span>
                                 <span data-key="t-dashboard">Dashboard </span>
                             </a>
                         </li>
@@ -49,6 +49,31 @@
                                 <li><a href="{{ url('panel/admin/show-scholarship') }}" key="t-products">Show Scholarship</a></li>
                             </ul>
                         </li>
+                        
+                        
+                            <li>
+                                <a href="javascript:void(0);" class="has-arrow">
+                                    <i data-feather="flag"></i>
+                                    <span data-key="t-ecommerce">Blog Manage...</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ url('panel/admin/add-blog') }}" data-key="t-products">Add Blog</a></li>
+                                    <li><a href="{{ url('panel/admin/show-blog') }}" data-key="t-products">Show Blog</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" class="has-arrow">
+                                    <i class="fa fa-users" style="font-size: 17px;"></i>
+                                    <span data-key="t-user">Subscribed Manage...</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ url('panel/admin/show-subcribled') }}" data-key="t-user">Show Subscribed Emails</a></li>
+                                </ul>
+                            </li>
+
+
+
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

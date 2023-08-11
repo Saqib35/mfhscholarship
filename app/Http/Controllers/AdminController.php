@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 use App\Models\AddDegree;
 use App\Models\Countires;
+use App\Models\Subscriber;
+use Illuminate\Http\Request;
 use App\Models\AddScholarship;
+use App\Models\Blogs;
 use Yajra\DataTables\DataTables;
-
 
 
 class AdminController extends Controller
@@ -145,6 +146,47 @@ class AdminController extends Controller
 
     }
 
+    public function showSubcribled()
+    {
+
+        if (request()->ajax()) {
+            $Subscriber = Subscriber::select('*');
+            return DataTables::of($Subscriber)->make(true);
+        
+        }
+
+       return view('admin.show-subcribled');
+
+    }
+
+    public function showBlog()
+    {
+
+        if (request()->ajax()) {
+            $Blogs = Blogs::select('*');
+            
+            return DataTables::of($Blogs)
+            ->addColumn('action', function ($row) {
+                return '<button class="btn btn-danger" id="delscholarship' . $row->id . '" onclick="delscholarship(' . $row->id . ')"><i class="fa fa-trash"></i></button>';
+            })
+            ->editColumn('blog_img', function ($row) {
+                // Assuming you have a 'scholarship_university_logo' column in the database that stores the image filename (e.g., logo.png)
+                $logoUrl = asset($row->blog_img);
+                return '<img src="' . $logoUrl . '" alt="University Logo" width="100px" height="100px">';
+            })
+            ->editColumn('blog_banner', function ($row) {
+                // Assuming you have a 'scholarship_banner_img' column in the database that stores the image filename (e.g., banner.png)
+                $logoUrl = asset($row->blog_banner);
+                return '<img src="' . $logoUrl . '" alt="Banner Image" width="100px" height="100px">';
+            })
+            ->rawColumns(['blog_img', 'blog_banner', 'action'])
+            ->make(true);
+            }
+
+       return view('admin.show-blogs');
+
+    }
+
     public function addScholarShip()
     {
         
@@ -232,4 +274,58 @@ class AdminController extends Controller
 
 
     }
+
+    
+    public function AddBlogs(REQUEST $request){
+
+        
+        $addScholarship = new Blogs();
+        $addScholarship->meta_title = $request->meta_title;
+        $addScholarship->meta_keyworlds = $request->meta_keyworlds;
+        $addScholarship->meta_description = $request->meta_description;
+        $addScholarship->blog_name = $request->blog_name;
+        $addScholarship->blog_slug = $request->blog_slug;
+        $addScholarship->blog_category = $request->blog_category;
+        $addScholarship->blog_description = $request->blog_description;
+        $addScholarship->blog_img_alt_tag = $request->blog_img_alt_tag;
+        $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
+        $addScholarship->blog_content = $request->blog_content;
+        
+    
+        if($request->hasFile('blog_img'))
+        {
+              $dir =  public_path('blogs_images/');
+              $dir1 = 'blogs_images/';            
+              $extension = strtolower($request['blog_img']->getClientOriginalExtension()); // get image extension
+              $fileName = bin2hex(random_bytes(20)).'.'. $extension; // rename image
+              $request['blog_img']->move($dir, $fileName);
+              $logos1 ="{$dir1}{$fileName}";
+              $addScholarship->blog_img = $logos1;
+                
+        }
+    
+    
+        if($request->hasFile('blog_banner'))
+        {
+              $dir =  public_path('blogs_images/');
+              $dir1 = 'blogs_images/';            
+              $extension = strtolower($request['blog_banner']->getClientOriginalExtension()); // get image extension
+              $fileName = bin2hex(random_bytes(20)).'.'. $extension; // rename image
+              $request['blog_banner']->move($dir, $fileName);
+              $logos2 ="{$dir1}{$fileName}";
+              $addScholarship->blog_banner   = $logos2;
+          
+        }
+       
+       
+        $addScholarship->save();
+    
+    
+        return redirect()->back()->with('success', 'Blogs Added successfully.');
+    
+    
+    
+    
+        }
+        
 }

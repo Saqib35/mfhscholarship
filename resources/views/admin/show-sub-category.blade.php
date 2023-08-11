@@ -20,7 +20,7 @@
 
                 <!-- start page title -->
                 <?php
-                $maintitle = "Ecommerce";
+                $maintitle = "MFH Scholarship";
                 $title = "Show Sub Category";
                 ?>
                  @include ('admin.layouts.breadcrumb')

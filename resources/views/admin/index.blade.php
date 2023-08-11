@@ -33,10 +33,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Category</span>
+                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Degree</span>
                                         <h4 class="mb-3">
-                                              <span class="counter-value" data-target="2222">
-                                               2
+                                              <span class="counter-value" data-target="{{DB::table('add_degree')->count()}}">
+                                               {{DB::table('add_degree')->count()}}
                                               </span>
                                         </h4>
                               
@@ -56,10 +56,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Product</span>
+                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Scholarships</span>
                                         <h4 class="mb-3">
-                                              <span class="counter-value" data-target="2222">
-                                               2
+                                              <span class="counter-value" data-target=" {{DB::table('add_scholarships')->count()}}">
+                                              {{DB::table('add_scholarships')->count()}}
                                               </span>
                                         </h4>
                               
@@ -78,10 +78,10 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total New Order</span>
+                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Blogs</span>
                                         <h4 class="mb-3">
-                                              <span class="counter-value" data-target="2222">
-                                               2
+                                              <span class="counter-value" data-target=" {{DB::table('blogs')->count()}}">
+                                              {{DB::table('blogs')->count()}}
                                               </span>
                                         </h4>
                               
@@ -100,10 +100,32 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-grow-1">
-                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total shipping Order</span>
+                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Country</span>
                                         <h4 class="mb-3">
-                                              <span class="counter-value" data-target="2222">
-                                               2
+                                              <span class="counter-value" data-target="{{DB::table('countries')->count()}}">
+                                              {{DB::table('countries')->count()}}
+                                              </span>
+                                        </h4>
+                              
+                                    </div>
+
+                              
+                                </div>
+                            </div><!-- end card body -->
+                        </div><!-- end card -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-3">
+                        <!-- card -->
+                        <div class="card card-h-100">
+                            <!-- card body -->
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Subcribled New letter</span>
+                                        <h4 class="mb-3">
+                                              <span class="counter-value" data-target="{{DB::table('subscribers')->count()}}">
+                                              {{DB::table('subscribers')->count()}}
                                               </span>
                                         </h4>
                                     </div>

@@ -5,19 +5,19 @@
              <div class="navbar-brand-box">
                  <a href="javascript:void(0)" class="logo logo-dark">
                      <span class="logo-sm">
-                         <img src="{{ asset('assets/logo-icon.webp')}}" alt="" height="30">
+                         <img src="{{ asset('assets/favicon.png')}}" alt="" height="30">
                      </span>
                      <span class="logo-lg">
-                         <img src="{{ asset('assets/logo.svg')}}" alt="" height="24"> <span class="logo-txt"></span>
+                         <img src="{{ asset('assets/logo.png')}}" alt="" height="40"> <span class="logo-txt"></span>
                      </span>
                  </a>
 
                  <a href="javascript:void(0)" class="logo logo-light">
                      <span class="logo-sm">
-                         <img src="{{ asset('assets/logo-icon.webp')}}" alt="" height="30">
+                         <img src="{{ asset('assets/favicon.png')}}" alt="" height="30">
                      </span>
                      <span class="logo-lg">
-                         <img src="{{ asset('assets/logo.svg')}}" alt="" height="24"> <span class="logo-txt"></span>
+                         <img src="{{ asset('assets/logo.png')}}" alt="" height="24"> <span class="logo-txt"></span>
                      </span>
                  </a>
              </div>
@@ -52,7 +52,7 @@
 
              <div class="dropdown d-inline-block">
                  <button type="button" class="btn header-item bg-soft-light border-start border-end" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img class="rounded-circle header-profile-user user-profile-image" src="{{ asset('assets/logo.svg')}}" alt="Header Avatar" id="user_image">
+                     <img class="rounded-circle header-profile-user user-profile-image" src="{{ asset('assets/favicon.png')}}" alt="Header Avatar" id="user_image">
                      <span class="d-none d-xl-inline-block ms-1 fw-medium setting_user_name" id="setting_user_name">Admin</span>
                      <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                  </button>

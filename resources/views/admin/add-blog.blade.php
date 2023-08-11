@@ -1,16 +1,19 @@
-
 @extends('admin.layouts.master')
 
 @section('css')
 
+  <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
 @endsection
+
 
 @section('main')
 <!-- Begin page -->
 <div id="layout-wrapper">
-
+    
     @include ('admin.layouts.sidebar');
-    @include ('admin.layouts.topbar');
+    @include ('admin.layouts.topbar')
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -22,176 +25,189 @@
 
                 <!-- start page title -->
                 <?php
-                $maintitle = "Ecommerce";
+                $maintitle = "MFH Scholarship";
                 $title = "Add Blog";
                 ?>
+                
                 @include ('admin.layouts.breadcrumb')
                 <!-- end page title -->
 
 
                 <div class="row">
                     <div class="col-12">
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Basic Information</h4>
-                                <p class="card-title-desc">Fill all information below</p>
+                                <h4 class="card-title mb-0">Blog Details</h4>
                             </div>
                             <div class="card-body">
-                                <form action="" method="POST" enctype='multipart/form-data'>
-                                    <div class="row">
-                                         <div class="col-md-6 mb-3">
-                                                <label for="productname">Product Name</label>
-                                                <input id="productname" required="" onkeyup="createSlug(this.value)" name="prod_name" type="text" class="form-control">
-                                            
-                                            
-                                        </div>
-
-                                        <div class="col-md-6 mb-3">
-                                                <label for="product_slug">Product Slug</label>
-                                                <input id="product_slug"  required="" readonly name="product_slug" type="text" class="form-control">
-                                            
-                                            
-                                        </div>
-
-                                        <div class="col-md-6 mb-3">
-                                                <label for="prod_price">Product Price</label>
-                                                <input id="prod_price"  required="" name="prod_price" type="text" class="form-control">
-                                            
-                                        </div>
-
-                                        
-                                        <div class="col-md-6 mb-3">
-                                                <label for="prod_old_price">Product Old Price</label>
-                                                <input id="prod_old_price" name="prod_old_price" type="text" class="form-control">
-                                            
-                                        </div>
-                                        
-                                        <div class="col-md-6 mb-3">
-                                                <label for="discount">Product Discount</label>
-                                                <input id="discount" name="discount" type="text" class="form-control">
-                                            
-                                        </div>
-
-                                        <div class="col-md-6 mb-3">
-                                                <label for="product_code">Product Code</label>
-                                                <input id="product_code"  required="" name="product_code" type="text" class="form-control">
-                                            
-                                        </div>
-
-
-                                        <div class="col-md-6 mb-3">
-                                            
-                                                <label class="control-label">Category</label>
-                                                <select class="form-control" required=""  onchange="getSubCate(this.value)" name="cate_id">
-                                                    <option  disabled selected value="" >Select</option>
-                                                  
-                                                </select>
-                                        
-                                        </div>
-
-                                       <div class="col-md-6 mb-3">
-                                            
-                                                <label class="control-label">Sub category</label>
-                                                <select class="form-control" required="" name="sub_cate_id" id="sub_cate_id">
-                                                  
-                                                </select>
-                                        
-                                        </div>
-
-
-                                        
-                                        <div class="col-md-6 mb-3">
-                                            
-                                                <label class="control-label">Featured</label>
-                                                <select required="" class="form-control" name="featured">
-                                                    <option disabled selected value="">Select</option>
-                                                    <option value="off">No featured</option>
-                                                    <option value="on">Featured</option>
-                                                    
-                                                </select>
-                                        
-                                        </div>
-
-
-                                        <div class="col-md-6 mb-3">
-                                                <label for="file1">Product Image</label>
-                                               <input type="file" class="form-control" id="file1" required="" name="file1">
-                                            
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                                <label for="file2">Product Image</label>
-                                               <input type="file" class="form-control" id="file2"  required="" name="file2">
-                                            
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                                <label for="file3">Product Image</label>
-                                               <input type="file" class="form-control" id="file3"  required="" name="file3">
-                                            
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                                <label for="file4">Product Image</label>
-                                               <input type="file" class="form-control" id="file4"  required="" name="file4">
-                                            
-                                        </div>
-
-                                    </div>
-
-
-
-                                   <div class="row mb-3">
-                                        <div class="col-sm-6">
+                                <form action="{{ url('add-blogs') }}" enctype='multipart/form-data' method="post" id="myForm" class="drozone">
+                                 @csrf
+                                        <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="metatitle">Meta title</label>
-                                                <input id="metatitle"  required="" name="metatitle" type="text" class="form-control">
+                                                <label for="meta_title">Meta Title</label>
+                                                <input id="meta_title" required="" name="meta_title" type="text" class="form-control">
                                             </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="metakeywords">Meta Keywords</label>
-                                                <input id="metakeywords"  required="" name="metakeywords" type="text" class="form-control">
+                                                <label for="meta_keyworlds">Meta Keyworlds</label>
+                                                <input id="meta_keyworlds" required="" name="meta_keyworlds" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="meta_description">Meta Description</label>
+                                                <input id="meta_description" required="" name="meta_description" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                      
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_name">Blog Name</label>
+                                                <input id="blog_name" onkeyup="createSlug(this.value)" required="" name="blog_name" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_slug">Slug</label>
+                                                <input id="blog_slug" readonly required="" name="blog_slug" type="text" class="form-control">
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <label for="metadescription">Meta Description</label>
-                                                <textarea class="form-control"  required="" name="metadescription" id="metadescription" rows="5"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        
 
-                                       <div class="col-md-12 mb-3">
-                                                <label for="prod_description">Product Description</label>
-                                               <textarea class="form-control"  required="" name="prod_description"></textarea> 
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_category">Blog Category</label>
+                                                <select class="form-control" name="blog_category" id="countrySelect" required="">
+                                                    <option value="internships">Internships</option>
+                                                    <option value="application-resources">Application Resources</option>
+                                                    <option value="scholarships-and-study">Scholarships and Study</option>
+                                                    <option value="employment-and-profession">Employment and Profession</option>
+                                                </select>
+                                            </div>
                                             
                                         </div>
 
-                                   
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_description">Blog Description</label>
+                                                <input id="blog_description" required="" name="blog_description" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_img">Blog Image</label>
+                                                <input id="blog_img" required="" name="blog_img" type="file" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_img_alt_tag">Blog Image Alt Tag</label>
+                                                <input id="	blog_img_alt_tag" required="" name="blog_img_alt_tag" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_banner">Blog Banner Img</label>
+                                                <input id="blog_banner" required="" name="blog_banner" type="file" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_banner_alt_tag">Blog Banner Img Alt Tag</label>
+                                                <input id="blog_banner_alt_tag" required="" name="blog_banner_alt_tag" type="text" class="form-control">
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="blog_content">Blog Details</label>
+                                                <textarea name="blog_content" id="editor1" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                      
+                                    <br>
+
                                     <div class="d-flex flex-wrap gap-2">
-                                        <button type="submit" name="addproduct" class="btn btn-primary waves-effect waves-light">Save Changes</button>
+                                        <button type="submit" name="add-category" class="btn btn-primary waves-effect waves-light">Save Changes</button>
                                         <button type="button" class="btn btn-secondary waves-effect waves-light">Cancel</button>
                                     </div>
                                 </form>
-
                             </div>
-                        </div>
-
-                       
+                        </div> <!-- end card-->
                     </div>
                 </div>
                 <!-- end row -->
-
-
-
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
+
         @include ('admin.layouts.footer')
+
     </div>
     <!-- end main content-->
-
 </div>
 <!-- END layout-wrapper -->
 @endsection
 
 @section('js')
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>
+  
+    CKEDITOR.replace('editor1', {
+        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form'
+        
+    });
+
+
+    function createSlug(inputString) {
+
+        // Remove special characters and convert to lowercase
+        const cleanedString = inputString
+            .replace(/[^\w\s]/gi, '')
+            .toLowerCase();
+        const slug = cleanedString.replace(/\s+/g, '-');
+         $('#blog_slug').val(slug);
+
+    }
+
+    $(document).ready(function() {
+        $('#countrySelect').select2();
+    });
+
+</script>
+
 @endsection
+

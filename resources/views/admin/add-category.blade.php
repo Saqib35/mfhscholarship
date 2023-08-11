@@ -21,7 +21,7 @@
 
                 <!-- start page title -->
                 <?php
-                $maintitle = "Bloggerworld";
+                $maintitle = "MFH Scholarship";
                 $title = "Add Degree";
                 ?>
                 

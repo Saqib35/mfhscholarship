@@ -46,8 +46,12 @@ Route::group(['middleware'=>['IsLogin']],function () {
 Route::get('panel/admin/login', function () {return view('admin.login');})->name('panel.admin.login');
 Route::get('panel/admin/home', function () {return view('admin.index');})->name('panel.admin.home');
 Route::get('panel/admin/show-country', [AdminController::class, 'showCountry'])->name('show-country');
+Route::get('panel/admin/show-subcribled', [AdminController::class, 'showSubcribled'])->name('show-subcribled');
 Route::get('panel/admin/add-category', function () {return view('admin.add-category');})->name('panel.admin.add-category');
+
 Route::get('panel/admin/add-blog', function () {return view('admin.add-blog');})->name('panel.admin.add-blog');
+Route::get('panel/admin/show-blog', [AdminController::class, 'showBlog'])->name('show-blog');
+
 Route::get('panel/admin/add-degree', [AdminController::class, 'addDegree'])->name('add-degree');
 Route::get('panel/admin/show-category', [AdminController::class, 'showCategory'])->name('panel.admin.show-category');
 Route::get('panel/admin/add-scholarship', [AdminController::class, 'addScholarShip'])->name('panel.admin.add-scholarship');
@@ -56,6 +60,8 @@ Route::get('panel/admin/del-degree', [AdminController::class, 'delDegree'])->nam
 Route::get('panel/admin/del-delscholarship', [AdminController::class, 'delScholarship'])->name('del-delscholarship');
 Route::post('upload', [AdminController::class, 'upload'])->name('upload');
 Route::post('add-scholarship', [AdminController::class, 'Addcholarship']);
+Route::post('add-blogs', [AdminController::class, 'AddBlogs']);
+
 });
 
 // later use when register work start

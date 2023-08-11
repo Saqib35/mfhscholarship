@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>Blogger World | Dashboard</title>
+    <title>MFH Scholarships | Dashboard</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="description" />
@@ -20,7 +20,11 @@
     <!-- App Css-->
     <link href="{{ asset('admin/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
    
-
+    <style>
+     .header-profile-user {
+       background-color: black !important;
+      }
+    </style>
     @yield('css')
 
 

@@ -21,7 +21,7 @@
 
                 <!-- start page title -->
                 <?php
-                $maintitle = "Ecommerce";
+                $maintitle = "MFH Scholarship";
                 $title = "Add Sub Category";
                 ?>
                  @include ('admin.layouts.breadcrumb')
