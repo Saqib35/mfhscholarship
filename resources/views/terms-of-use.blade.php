@@ -48,7 +48,7 @@
         <div class="accordion_area">
             <div class="container">
                 <div class="row mb-n8">
-                    <p class="text-black" align="justify">Your use of the (Website name) is subject to the terms and conditions listed below (the "Terms"). Before using the website, please read the Terms carefully. </p>
+                    <p class="text-black" align="justify">Your use of the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> is subject to the terms and conditions listed below (the "Terms"). Before using the website, please read the Terms carefully. </p>
                      <ul>
                         <li>1. You agree to be bound by the Terms by using the Website. Please refrain from using the Website if you do not agree to the Terms. </li>
                         <li>2. You may only use the website for your own personal, noncommercial purposes. The Website cannot be used for any commercial endeavors. </li> 
@@ -61,15 +61,15 @@
 
                     </ul>
                     <h3>•	Terms of use</h3>
-                    <p class="text-black" align="justify">The (website name) offers details about scholarships, fellowships, and other possibilities for studying abroad.</p>
-                    <p class="text-black" align="justify">The (website name) neither manages nor administers scholarship or fellowship programs nor does it offer scholarships or fellowships. The management of any scholarship or fellowship program for which it offers information is not the responsibility of the (website name).</p>
-                    <p class="text-black" align="justify">The (website name) offers links to other websites that offer details on fellowships and scholarships. The (website name) has no control over these external websites, and as a result, the (website name) is not liable for the truthfulness, relevance, or content of the material found there.</p>
-                    <p class="text-black" align="justify">The (website name) neither recommends nor endorses any specific fellowship or scholarship program nor does it make any claims regarding the caliber of the offerings.</p>
-                    <p class="text-black" align="justify">The (website name) does not gather any personal data from website visitors. However, the (website name) may gather general data on how people use the website. This data is not disclosed to outside parties and is only used to enhance the website's content.</p>
-                    <p class="text-black" align="justify">You accept these terms of usage by using (website name). You shouldn't use the (website name) if you disagree with these terms of usage.</p>
+                    <p class="text-black" align="justify">The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> offers details about scholarships, fellowships, and other possibilities for studying abroad.</p>
+                    <p class="text-black" align="justify">The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> neither manages nor administers scholarship or fellowship programs nor does it offer scholarships or fellowships. The management of any scholarship or fellowship program for which it offers information is not the responsibility of the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a>.</p>
+                    <p class="text-black" align="justify">The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> offers links to other websites that offer details on fellowships and scholarships. The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> has no control over these external websites, and as a result, the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> is not liable for the truthfulness, relevance, or content of the material found there.</p>
+                    <p class="text-black" align="justify">The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> neither recommends nor endorses any specific fellowship or scholarship program nor does it make any claims regarding the caliber of the offerings.</p>
+                    <p class="text-black" align="justify">The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> does not gather any personal data from website visitors. However, the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> may gather general data on how people use the website. This data is not disclosed to outside parties and is only used to enhance the website's content.</p>
+                    <p class="text-black" align="justify">You accept these terms of usage by using <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a>. You shouldn't use the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> if you disagree with these terms of usage.</p>
                      <h3>•	Parties to the terms of use agreement</h3>   
                      <p class="text-black" align="justify">You accept the terms of service that apply to each online service you use. The legally binding guidelines that you must abide by when using the service are the terms of service. You and the business offering the service are the only parties to the terms of the service contract.</p>
-                     <p class="text-black" align="justify">You and the (website name) have a contract that governs the service agreement's terms. You consent to abide by the guidelines outlined in the contract. The (website name) may file a lawsuit if you violate the terms.</p>
+                     <p class="text-black" align="justify">You and the <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> have a contract that governs the service agreement's terms. You consent to abide by the guidelines outlined in the contract. The <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a> may file a lawsuit if you violate the terms.</p>
                      <p class="text-black" align="justify">As part of a service agreement, you might consent to the following:</p>
                      <p class="text-black" align="justify">- You won't use the service for any illicit activities.</p>
                      <p class="text-black" align="justify">- You won't attempt to access areas of the service that are off-limits.</p>

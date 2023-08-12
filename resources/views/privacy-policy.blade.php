@@ -48,7 +48,7 @@
         <div class="accordion_area">
             <div class="container">
                 <div class="row mb-n8">
-                    <p class="text-black" align="justify">Thank you for visiting mfhscholarship.com (the "Website"). This Privacy Policy explains how we collect, use, and protect your personal information when you use our Website. Your privacy is of utmost importance to us, and we are committed to ensuring the confidentiality and security of your data. By using the Website, you consent to the practices described in this Privacy Policy.</p>
+                    <p class="text-black" align="justify">Thank you for visiting <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a>. This Privacy Policy explains how we collect, use, and protect your personal information when you use our Website. Your privacy is of utmost importance to us, and we are committed to ensuring the confidentiality and security of your data. By using the Website, you consent to the practices described in this Privacy Policy.</p>
                     <h3>Information We Collect</h3>
                     <p class="text-black" align="justify">We collect personal information that you voluntarily provide to us when you contact us through the provided contact form or email address. This may include your name, email address, and any details you choose to share in your message.</p>
                     <h3>How We Use Your Information</h3>
