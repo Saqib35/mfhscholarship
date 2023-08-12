@@ -9,25 +9,6 @@
     @include('includes.cssLinks')
     @yield('css')
     
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Scholarship",
-  "name": "Example Scholarship",
-  "description": "This scholarship supports students in their academic pursuits.",
-  "provider": {
-    "@type": "EducationalOrganization",
-    "name": ""
-  },
-  "value": {
-    "@type": "MonetaryAmount",
-    "currency": "USD",
-    "value": "5000"
-  },
-  "applicationDeadline": "2023-12-31",
-  "url": "<?php echo   Request::fullUrl()  ?>"
-}
-</script>
 
     
     <style>
