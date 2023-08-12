@@ -24,7 +24,7 @@
                             <div class="main-menu">
                                 <ul>
                                     <li class="has-children">
-                                     <a href="{{ url('/') }}" class="@if(request()->is('/')) active @endif">Home</a>
+                                     <a href="{{ url('/') }}" class="@if(request()->is('/')) active-tab @endif">Home</a>
                                    </li>
                                     <li class="has-children">
                                         <a href="javascript: void(0)" class="@if(request()->is('scholarships-by-countries') || request()->is('category/scholarship-lists')) active @endif">Scholarship </a>
@@ -43,10 +43,10 @@
                                         </ul>
                                     </li>
                                     <li class="has-children">
-                                     <a href="{{ url('category/internships') }}" class="@if(request()->is('category/blog/internships')) active @endif">Internships</a>
+                                     <a href="{{ url('category/internships') }}" class="@if(request()->is('category/internships')) active-tab @endif">Internships</a>
                                    </li>
                                     <li class="has-children">
-                                        <a href="javascript: void(0)">Blogs</a>
+                                        <a href="javascript: void(0)" class="@if(request()->is('category/blog/application-resources') || request()->is('category/blog/scholarships-and-study') || request()->is('category/blog/employment-and-profession')) active @endif">Blogs</a>
                                         <ul class="sub-menu">
                                             <li><a class="@if(request()->is('category/blog/application-resources')) active-tab @endif" href="{{ url('category/blog/application-resources'); }}">Applications Documents</a></li>
                                             <li><a class="@if(request()->is('category/blog/scholarships-and-study')) active-tab @endif" href="{{ url('category/blog/scholarships-and-study'); }}">Scholarships / Study</a></li>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\AddScholarship;
 use App\Models\Blogs;
 use Yajra\DataTables\DataTables;
-
+use DB;
 
 class AdminController extends Controller
 {
@@ -195,6 +195,12 @@ class AdminController extends Controller
         return view('admin.addScholarShip',['countries' => $countires,'AddDegree'=>$AddDegree]);
     }
 
+    public function addCountry()
+    {
+        
+        return view('admin.addCountry');
+    }
+
     public function upload(Request $request)
     {
      
@@ -274,6 +280,40 @@ class AdminController extends Controller
 
 
     }
+
+
+    
+    public function AddPCountry(REQUEST $request){
+
+    
+        $data = [
+            'country_code' => $request->scholarCode,
+            'slug' => $request->scholarSlug,
+            'country_name' => $request->scholarName,
+            'country_description' => $request->scholarDecription,
+            'category' =>$request->scholarDegree,
+            'meta_title' => $request->metaTitle,
+            'meta_description' => $request->metaDescription,
+            'meta_keywords' => $request->metaKeyword,
+            'alt_tag'=>$request->university_logo_alt_tag
+        ];
+        
+        DB::table('countries')->insert($data);
+
+        if($request->hasFile('scholarUniLogo'))
+        {
+              $dir =  public_path('assets/flag/');
+              $extension = strtolower($request['scholarUniLogo']->getClientOriginalExtension()); // get image extension
+              $fileName = $request->scholarCode.'.'. $extension; // rename image
+              $request['scholarUniLogo']->move($dir, $fileName);
+                
+        }
+    
+       
+        return redirect()->back()->with('success', 'Country Added successfully.');
+    
+        }
+    
 
     
     public function AddBlogs(REQUEST $request){

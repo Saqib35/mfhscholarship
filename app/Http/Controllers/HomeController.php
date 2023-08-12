@@ -65,6 +65,9 @@ class HomeController extends Controller
         if ($degree) {
                 $banner_img=$degreeSlug;
                 $slug=$degreeSlug;
+                $title = $degree->meta_title;
+                $description = $degree->meta_description;
+                $keywords = $degree->meta_keywords; 
                 $AddScholarship=AddScholarship::where('scholarship_degree','=',$degreeSlug)->paginate(9);
 
         } else {
@@ -73,22 +76,32 @@ class HomeController extends Controller
                 {
                     $banner_img="all-country";
                     $slug="Scholarship Lists";
+                    $title="Your Potential: Navigating Scholarships for Educational Excellence";
+                    $description="Embark on a journey of educational excellence through scholarships. Explore a diverse range of scholarship opportunities, grants, and financial support to fuel your academic aspirations and shape a promising future.";
+                    $keywords="scholarships, education scholarships, academic grants, financial aid, scholarship opportunities, educational funding";
                     $AddScholarship=AddScholarship::paginate(9);
+                  
                  }
                  else{
                     $countires = Countires::where('slug', $degreeSlug)->first();
                     if ($countires) {
                        $banner_img=$countires->country_code;
                        $slug=$request->slug;
+                       $title=$countires->meta_title;
+                       $description=$countires->meta_description;
+                       $keywords=$countires->meta_keywords;
                        $AddScholarship=AddScholarship::where('scholarship_country','=',$degreeSlug)->paginate(9);
+                   
                     }else{
 
 
                         if($degreeSlug=='internships')
                         {
-
+                           $title="Launch Your Career: Explore Exciting Internship Opportunities for Practical Experience";
+                           $description="Discover valuable internships that offer real-world experience and skill development. Our comprehensive guide helps you find the perfect internship to kickstart your professional journey and build a strong foundation for your future.";
+                           $keywords="internships, professional intern programs, experiential learning, internship opportunities, practical work experience, career development";
                            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
-                           return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug]);
+                           return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
                              
                         }else{
               
@@ -102,7 +115,7 @@ class HomeController extends Controller
 
         }
 
-        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img]);
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img ,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
     
     }
 
@@ -113,7 +126,10 @@ class HomeController extends Controller
         $slug = $request->input('keyword');
         $banner_img="CN";
         $AddScholarship = AddScholarship::where('scholarship_name', 'LIKE', "%$slug%")->paginate(9);
-        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img]);
+        $title="Unlock Your Future with Scholarships: Funding Opportunities for Education";
+        $description="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future.";
+        $keywords="scholarships, education funding, financial aid, scholarship opportunities, academic grants, educational support";
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
     
     }
 
@@ -123,18 +139,37 @@ class HomeController extends Controller
 
         $degreeSlug = $request->slug;
         
-        if ($degreeSlug=='application-resources' || $degreeSlug=='scholarships-and-study' || $degreeSlug=='employment-and-profession') {
-              
-                $slug=$degreeSlug;
-                $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
+        if ($degreeSlug=='application-resources') {
+            $title="Streamline Your Journey: Essential Application Resources for Success";
+            $description="Access a wealth of application resources to enhance your chances of success. Our comprehensive guide provides valuable insights, tips, and tools to help you navigate the application process with confidence and achieve your goals.";
+            $keywords="application resources, application tips, application guidelines, application tools, application success, application support";
+            $slug=$degreeSlug;
+            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
 
-        } else {
+        }else if($degreeSlug=='scholarships-and-study')
+        {
+            $title="Funding Your Education: Scholarships and Study Opportunities for a Bright Future";
+            $description="Discover the perfect blend of scholarships and study programs to fuel your educational journey. Our comprehensive guide offers insights into securing financial aid and finding the right study path for your academic and career aspirations.";
+            $keywords="scholarships and study, educational funding, study programs, scholarship opportunities, academic financial aid, higher education support";
+            $slug=$degreeSlug;
+            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
+        
+        }else if($degreeSlug=='employment-and-profession')
+        {
+            $title="Unlocking Opportunities: Navigating Employment and Profession Pathways for Success";
+            $description="Explore a world of possibilities in employment and profession fields. Our comprehensive guide provides insights into career growth, job opportunities, and professional development, empowering you to thrive in your chosen profession.";
+            $keywords="employment and profession, career opportunities, professional growth, job pathways, career development, job prospects, professional success";
+            $slug=$degreeSlug;
+            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
+        
+        }
+         else {
         
             abort(404);
         
         }
 
-        return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug]);
+        return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
     
     }
     

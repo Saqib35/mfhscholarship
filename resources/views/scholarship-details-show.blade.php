@@ -2,7 +2,22 @@
 
 @section('css')
  <title> {{ $modifiedString = str_replace('-', ' ', $slug); }}</title>
-
+ <style>
+            .img-side{
+                height: 100px;
+                width: 100%
+            }
+            .img-side img{
+                height: 100%;
+                width: 100%
+            }
+            @media screen and (max-width: 991){
+                .right_sidebar{
+                    display: none;
+                }
+            }
+        </style>
+   
 @endsection
 
 @section('main')
@@ -31,15 +46,39 @@
         <div class="section section-margin-bottom mt-5">
             <div class="container">
                 <div class="row ">
-                    <div class="col-8">
+                    <div class="col-lg-8 col-md-12">
                      {!! $AddScholarship->scholarship_content !!}
                     </div>      
-                    <div class="col-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, asperiores corrupti fugit reprehenderit libero provident iusto odit vitae labore dicta quia itaque cumque veniam, fugiat hic magni deserunt fuga nesciunt.</div>      
+                    <div class="col-lg-4 right_sidebar">
+                        <div class="container">
+                            <div class="row">
+                                @php
+                                $tenDaysAgo =  \Carbon\Carbon::now()->subDays(10);
+                                $scholarship_related = DB::table('add_scholarships')
+                                ->where('id', '!=', $AddScholarship->id)
+                                ->where('created_at', '>=', $tenDaysAgo)
+                                ->inRandomOrder()
+                                ->limit(4)
+                                ->get();
+                                @endphp
+
+                                @foreach($scholarship_related as $record)
+                                <div class="col-6 mb-3">
+                                    <a href="{{ url($record->scholarship_slug) }}">
+                                      <div class="img-side rounded">
+                                         <img class="rounded" src="{{ asset($record->scholarship_university_logo) }}" alt="{{ $record->university_logo_alt_tag }}" >
+                                      </div>
+                                      <h6 class="mt-2">{{ $record->scholarship_name }}</h6>
+                                    </a>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>      
                 </div>
            </div>
         </div>
-        
-   
+       
     
 @endsection
 

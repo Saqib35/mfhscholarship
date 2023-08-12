@@ -1,7 +1,24 @@
 @extends('layouts.main')
 
 @section('css')
- <title> {{ $modifiedString = str_replace('-', ' ', $slug); }}</title>
+ <title>{{ $title }}</title>
+ 
+    <meta name="description" content="{{ $description }}"/>
+    <meta name="keywords" content="{{ $keywords }}">
+    <meta name="robots" content="follow, index"/>
+    <link rel="canonical" href="{{  Request::fullUrl() }}"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ $title }}"/>
+    <meta property="og:description" content="{{ $description }}"/>
+    <meta property="og:url" content="{{  Request::fullUrl() }}"/>
+    <meta property="og:site_name" content="MFH Scholarship"/>
+    <meta property="og:image" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
+    <meta property="og:image:width" content="512"/>
+    <meta property="og:image:height" content="512"/>
+    <meta property="og:image:alt" content="Scholarship"/>
+    <meta property="og:image:type" content="image/jpeg"/>
 
 @endsection
 
@@ -41,7 +58,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Blog Image">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="{{ $AddScholarships->university_logo_alt_tag }}">
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->

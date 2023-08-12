@@ -35,6 +35,7 @@
                                 <span data-key="t-ecommerce">Country Management</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
+                               <li><a href="{{ url('panel/admin/add-country') }}" key="t-products">Add Country</a></li>
                                <li><a  href="{{ url('panel/admin/show-country') }}" data-key="t-customers">Show All Country</a></li> 
 
                             </ul>

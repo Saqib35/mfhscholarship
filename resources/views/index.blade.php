@@ -1,23 +1,23 @@
 @extends('layouts.main')
 
 @section('css')
-<title>MFH Scholarship – Worldwide Scholarships and Internships at One Place</title>
-    <meta name="description" content="description"/>
+<title>Unlock Your Future with Scholarships: Funding Opportunities for Education</title>
+    <meta name="description" content="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future."/>
+    <meta name="keywords" content="scholarships, education funding, financial aid, scholarship opportunities, academic grants, educational support">
     <meta name="robots" content="follow, index"/>
     <link rel="canonical" href="{{  Request::fullUrl() }}"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="MFH Scholarship – Worldwide Scholarships and Internships at One Place"/>
-    <meta property="og:description" content="description"/>
+    <meta property="og:title" content="Unlock Your Future with Scholarships: Funding Opportunities for Education"/>
+    <meta property="og:description" content="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future."/>
     <meta property="og:url" content="{{  Request::fullUrl() }}"/>
     <meta property="og:site_name" content="MFH Scholarship"/>
     <meta property="og:image" content="{{ url('assets/logo.png') }}"/>
     <meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
     <meta property="og:image:width" content="512"/>
     <meta property="og:image:height" content="512"/>
-    <meta property="og:image:alt" content="MFH Scholarship"/>
+    <meta property="og:image:alt" content="Scholarship"/>
     <meta property="og:image:type" content="image/jpeg"/>
-
 
 @endsection
 
@@ -29,7 +29,7 @@
 
               <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/2.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/2.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -44,7 +44,7 @@
 
                <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/1.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/1.webp') }}" alt="Scholarship"/>
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -58,7 +58,7 @@
 
                <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/3.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/3.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -72,7 +72,7 @@
 
               <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/4.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/4.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -86,7 +86,7 @@
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/5.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/5.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -101,7 +101,7 @@
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/6.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/6.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -115,7 +115,7 @@
 
                 <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/7.webp') }}" alt="Slider Image" />
+                        <img src="{{ asset('assets/banner/7.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
                         <div class="hero-slide-content text-center text-md-end">
@@ -157,7 +157,7 @@
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                         <img src="{{ asset('assets/icon/scholarship.webp') }}" width="35px">    
+                         <img src="{{ asset('assets/icon/scholarship.webp') }}" alt="Scholarship" width="35px">    
                         </div>
                         <!-- CTA Icon End -->
 
@@ -174,11 +174,12 @@
 
                 <div class="col mb-6" data-aos="fade-up" data-aos-duration="1100">
                     <!-- Single CTA Wrapper Start -->
-                    <div class="single-cta-wrapper">
+                    <a href="{{ url('category/internships') }}">
+                     <div class="single-cta-wrapper">
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                            <img src="{{ asset('assets/icon/internship.webp') }}" width="35px">
+                            <img src="{{ asset('assets/icon/internship.webp') }}" alt="Scholarship" width="35px">
                         </div>
                         <!-- CTA Icon End -->
 
@@ -188,27 +189,29 @@
                         </div>
                         <!-- CTA Content End -->
 
-                    </div>
+                     </div>
+                    </a>
                     <!-- Single CTA Wrapper End -->
                 </div>
 
                 <div class="col mb-6" data-aos="fade-up" data-aos-duration="1200">
                     <!-- Single CTA Wrapper Start -->
+                    <a href="{{ url('category/blog/scholarships-and-study') }}">
                     <div class="single-cta-wrapper">
 
                         <!-- CTA Icon Start -->
                         <div class="cta-icon">
-                         <img src="{{ asset('assets/icon/document.webp') }}" width="35px">
+                         <img src="{{ asset('assets/icon/document.webp') }}" alt="Scholarship" width="35px">
                         </div>
                         <!-- CTA Icon End -->
-
                         <!-- CTA Content Start -->
                         <div class="cta-content">
-                            <h4 class="title">Documents</h4>
+                            <h4 class="title">Blogs Scholarship</h4>
                         </div>
                         <!-- CTA Content End -->
 
-                    </div>
+                    </div> 
+                     </a>
                     <!-- Single CTA Wrapper End -->
                 </div>
 
@@ -246,7 +249,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Blog Image">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Scholarship">
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->
@@ -309,7 +312,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Blog Image">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Scholarship">
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->

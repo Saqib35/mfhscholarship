@@ -14,7 +14,7 @@
                     <div class="breadcrumb-wrapper">
                         <h2 class="breadcrumb-title">Blog Details Sidebar</h2>
                         <ul>
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
                             <li>Blog Details Sidebar</li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@
 
                             <!-- Blog Image Start -->
                             <div class="blog-image">
-                                <img src="assets/images/blog/large-size/1.jpg" alt="Blog Image" class="fit-image">
+                                <img src="assets/images/blog/large-size/1.jpg" alt="Scholarship" class="fit-image">
                             </div>
                             <!-- Blog Image End -->
 
@@ -95,7 +95,7 @@
                             <h2 class="blog-desc-title mb-6 mt-8">Comments</h2>
                             <div class="blog-details-comment-wrapper mb-6">
                                 <div class="thumb">
-                                    <img class="fit-image" src="assets/images/blog/small-size/95x95.jpg" alt="Blog Review">
+                                    <img class="fit-image" src="assets/images/blog/small-size/95x95.jpg" alt="Scholarship">
                                 </div>
                                 <div class="content">
                                     <h4 class="title">Catherin Betty</h4>
@@ -108,7 +108,7 @@
 
                             <div class="blog-details-comment-wrapper mb-6">
                                 <div class="thumb">
-                                    <img class="fit-image" src="assets/images/blog/small-size/95x95-2.jpg" alt="Blog Review">
+                                    <img class="fit-image" src="assets/images/blog/small-size/95x95-2.jpg" alt="Scholarship">
                                 </div>
                                 <div class="content">
                                     <h4 class="title">Alex Due</h4>
@@ -219,7 +219,7 @@
                                         <!-- Blog List Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details-sidebar.php" class="image">
-                                                <img class="fit-image" src="assets/images/blog/small-size/1.jpg" alt="Product Image">
+                                                <img class="fit-image" src="assets/images/blog/small-size/1.jpg" alt="Scholarship">
                                             </a>
                                         </div>
                                         <!-- Blog List Thumb End -->
@@ -244,7 +244,7 @@
                                         <!-- Blog List Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details-sidebar.php" class="image">
-                                                <img class="fit-image" src="assets/images/blog/small-size/2.jpg" alt="Product Image">
+                                                <img class="fit-image" src="assets/images/blog/small-size/2.jpg" alt="Scholarship">
                                             </a>
                                         </div>
                                         <!-- Blog List Thumb End -->
@@ -269,7 +269,7 @@
                                         <!-- Blog List Thumb Start -->
                                         <div class="blog-thumb">
                                             <a href="blog-details-sidebar.php" class="image">
-                                                <img class="fit-image" src="assets/images/blog/small-size/3.jpg" alt="Product Image">
+                                                <img class="fit-image" src="assets/images/blog/small-size/3.jpg" alt="Scholarship">
                                             </a>
                                         </div>
                                         <!-- Blog List Thumb End -->
