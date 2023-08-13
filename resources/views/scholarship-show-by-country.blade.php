@@ -47,6 +47,14 @@
     
         <div class="section section-margin-bottom mt-5">
             <div class="container">
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <p>{{ $short }}</p>
+                  
+                </div>
+            </div>
+            <br>
             @if(count($AddScholarship) > 0)
                 <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
                 @foreach($AddScholarship as $AddScholarships)
@@ -104,6 +112,7 @@
                 </div>
             </div>
             @endif
+            
         </div>
         
         </div>

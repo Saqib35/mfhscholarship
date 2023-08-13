@@ -68,6 +68,8 @@ class HomeController extends Controller
                 $title = $degree->meta_title;
                 $description = $degree->meta_description;
                 $keywords = $degree->meta_keywords; 
+                $short = $degree->short_description; 
+                
                 $AddScholarship=AddScholarship::where('scholarship_degree','=',$degreeSlug)->paginate(9);
 
         } else {
@@ -79,6 +81,8 @@ class HomeController extends Controller
                     $title="Your Potential: Navigating Scholarships for Educational Excellence";
                     $description="Embark on a journey of educational excellence through scholarships. Explore a diverse range of scholarship opportunities, grants, and financial support to fuel your academic aspirations and shape a promising future.";
                     $keywords="scholarships, education scholarships, academic grants, financial aid, scholarship opportunities, educational funding";
+                    $short = 'Scholarships are financial awards given to students to support their education. They are typically based on various criteria such as academic achievement, financial need, extracurricular involvement, community service, specific talents, or personal characteristics. Scholarships can come from a variety of sources including universities, colleges, private organizations, foundations, government agencies, and corporations.'; 
+                
                     $AddScholarship=AddScholarship::paginate(9);
                   
                  }
@@ -90,6 +94,7 @@ class HomeController extends Controller
                        $title=$countires->meta_title;
                        $description=$countires->meta_description;
                        $keywords=$countires->meta_keywords;
+                        $short = ''; 
                        $AddScholarship=AddScholarship::where('scholarship_country','=',$degreeSlug)->paginate(9);
                    
                     }else{
@@ -115,7 +120,7 @@ class HomeController extends Controller
 
         }
 
-        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img ,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img ,'title'=>$title,'description'=>$description,'keywords'=>$keywords,'short'=>$short]);
     
     }
 
@@ -129,7 +134,7 @@ class HomeController extends Controller
         $title="Unlock Your Future with Scholarships: Funding Opportunities for Education";
         $description="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future.";
         $keywords="scholarships, education funding, financial aid, scholarship opportunities, academic grants, educational support";
-        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img,'title'=>$title,'description'=>$description,'keywords'=>$keywords,'short'=>'']);
     
     }
 

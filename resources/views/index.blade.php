@@ -42,7 +42,7 @@
                </div>
                 
 
-               <div class="hero-slide-item swiper-slide">
+               <!-- <div class="hero-slide-item swiper-slide">
                     <div class="hero-slide-bg">
                         <img src="{{ asset('assets/banner/1.webp') }}" alt="Scholarship"/>
                     </div>
@@ -125,7 +125,7 @@
                             
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
             </div>

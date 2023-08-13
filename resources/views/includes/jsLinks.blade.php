@@ -15,7 +15,7 @@
     <!--Main JS-->
     <script src="{{ asset('assets/js/main.js')}}"></script>
     <script src="{{ asset('assets/js/sweet.js')}}"></script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
 <script>
      
   var OneSignal = window.OneSignal || [];
@@ -100,4 +100,4 @@
   }
 </script>
     
-    
+     -->
