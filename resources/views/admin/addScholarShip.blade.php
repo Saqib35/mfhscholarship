@@ -57,18 +57,20 @@
                                             
                                         </div>
 
+                                        
+
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="metaKeyword">Meta Keyworlds</label>
-                                                <input id="metaKeyword" required="" name="metaKeyword" type="text" class="form-control">
+                                                <label for="metaDescription">Meta Description</label>
+                                                <input id="metaDescription" required="" name="metaDescription" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="metaDescription">Meta Description</label>
-                                                <input id="metaDescription" required="" name="metaDescription" type="text" class="form-control">
+                                                <label for="metaKeyword">Meta Keyworld</label>
+                                                <input id="metaKeyword" required="" name="metaKeyword" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -100,7 +102,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarSlug">Slug</label>
-                                                <input id="scholarSlug" readonly required="" name="scholarSlug" type="text" class="form-control">
+                                                <input id="scholarSlug"  required="" name="scholarSlug" type="text" class="form-control">
                                             </div>
                                         </div>
 
@@ -122,9 +124,9 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarDegree">Scholarship Degree</label>
-                                                <select class="form-control" name="scholarDegree" id="countrySelect">
+                                                <select class="form-control" name="scholarDegree[]" id="countrySelect" multiple="">
                                                     @foreach($AddDegree as $AddDegree)
-                                                        <option value="{{ $AddDegree['degree'] }}">{{ $AddDegree['degree'] }}</option>
+                                                        <option value="{{ $AddDegree['degree_slug'] }}">{{ $AddDegree['degree'] }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

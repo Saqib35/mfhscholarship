@@ -69,8 +69,8 @@ class HomeController extends Controller
                 $description = $degree->meta_description;
                 $keywords = $degree->meta_keywords; 
                 $short = $degree->short_description; 
-                
-                $AddScholarship=AddScholarship::where('scholarship_degree','=',$degreeSlug)->paginate(9);
+                // $degreeSlugs = 'undergraduate-scholarships';
+                $AddScholarship = AddScholarship::whereJsonContains('scholarship_degree', $slug)->paginate(9);
 
         } else {
 

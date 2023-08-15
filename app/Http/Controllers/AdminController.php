@@ -237,7 +237,27 @@ class AdminController extends Controller
 
     public function Addcholarship(REQUEST $request){
 
-        
+    
+
+   // Get the original scholarship degree array from the request
+    $scholarDegreeArray = $request->input('scholarDegree');
+
+    // Add "all" to the beginning of the array
+    array_unshift($scholarDegreeArray, "all");
+
+ 
+
+    // Assign the modified array back to the request object
+    $request->merge(['scholarDegree' => $scholarDegreeArray]);
+
+    // Now you can encode it to JSON or use it as needed
+    $encodedScholarDegree = json_encode($scholarDegreeArray);
+  
+
+
+
+
+
     $addScholarship = new AddScholarship();
     $addScholarship->meta_title = $request->metaTitle;
     $addScholarship->meta_keyworlds = $request->metaKeyword;
@@ -247,7 +267,7 @@ class AdminController extends Controller
     $addScholarship->scholarship_name = $request->scholarName;
     $addScholarship->scholarship_slug = $request->scholarSlug;
     $addScholarship->scholarship_country = $request->scholarCountry;
-    $addScholarship->scholarship_degree = $request->scholarDegree;
+    $addScholarship->scholarship_degree = $encodedScholarDegree;
     $addScholarship->scholarship_description = $request->scholarDecription;
     $addScholarship->scholarship_content = $request->content;
     $addScholarship->scholarship_website_url = $request->scholarApplyUrl;

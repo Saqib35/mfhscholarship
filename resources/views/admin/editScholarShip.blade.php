@@ -125,7 +125,7 @@
                                                 <label for="scholarDegree">Scholarship Degree</label>
                                                 <select class="form-control" name="scholarDegree" id="countrySelect">
                                                     @foreach($AddDegree as $AddDegree)
-                                                        <option value="{{ $AddDegree['degree'] }}" @if($AddDegree['degree']== $Scholarship->scholarship_degree){{ "selected" }} @endif>{{ $AddDegree['degree'] }}</option>
+                                                        <option value="{{ $AddDegree['degree_slug'] }}" @if($AddDegree['degree']== $Scholarship->scholarship_degree){{ "selected" }} @endif>{{ $AddDegree['degree'] }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
