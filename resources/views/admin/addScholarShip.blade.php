@@ -184,7 +184,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarApplyUrl">Scholarship Apply Url</label>
-                                                <input id="scholarApplyUrl" required="" name="scholarApplyUrl" type="text" class="form-control">
+                                                <input id="scholarApplyUrl"  name="scholarApplyUrl" type="text" class="form-control">
                                             </div> 
                                         </div>
                                     <br>
