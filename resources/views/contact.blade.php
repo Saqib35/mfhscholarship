@@ -109,7 +109,7 @@
                         <p>If you have any query, feel free to contact us</p>
                         <address class="contact-block">
                             <ul>
-                                <li><i class="fa fa-phone"></i> <a href="tel:123-123-456-789">123 123 456 789</a></li>
+                                <li><i class="fa fa-phone"></i> <a href="tel:+447593146186">+44 759 314 6186</a></li>
                                 <li><i class="fa fa-envelope-o"></i> <a href="mailto:mfhscholarship@gmail.com">mfhscholarship@gmail.com</a></li>
                             </ul>
                         </address>

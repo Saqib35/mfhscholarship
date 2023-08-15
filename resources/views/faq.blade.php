@@ -68,7 +68,7 @@
                                 </div>
                                 <div id="collapseFive" class="collapse accordion-collapse show border-0" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
                                     <div class="card-body" >
-                                        <p class="text-black">There are several ways to learn about international scholarship opportunities. You can start by searching the internet, as many websites list scholarships by country. We at <a href="{{ url('/') }}" target="_blank">NFH Scholarship</a>, provide all the necessary information about international scholarships.</p>
+                                        <p class="text-black">There are several ways to learn about international scholarship opportunities. You can start by searching the internet, as many websites list scholarships by country. We at <a href="{{ url('/') }}" target="_blank">MFH Scholarship</a>, provide all the necessary information about international scholarships.</p>
                                     </div>
                                 </div>
                             </div>

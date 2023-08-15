@@ -18,7 +18,13 @@
     <meta property="og:image:height" content="512"/>
     <meta property="og:image:alt" content="Scholarship"/>
     <meta property="og:image:type" content="image/jpeg"/>
-
+   <style>
+       .headerText{
+           color:#fff !important;
+           font-weight:700 !important;
+           font-size:25px !important;
+       }
+   </style>
 @endsection
 
 @section('main')
@@ -32,10 +38,8 @@
                         <img src="{{ asset('assets/banner/2.webp') }}" alt="Scholarship" />
                     </div>
                     <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
+                        <div class="hero-slide-content text-center">
+                            <p class="headerText">Invest in your future, apply for a scholarship today.</p>
                             
                         </div>
                     </div>  
