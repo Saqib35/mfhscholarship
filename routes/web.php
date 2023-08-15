@@ -57,10 +57,12 @@ Route::get('panel/admin/show-category', [AdminController::class, 'showCategory']
 Route::get('panel/admin/add-scholarship', [AdminController::class, 'addScholarShip'])->name('panel.admin.add-scholarship');
 Route::get('panel/admin/add-country', [AdminController::class, 'addCountry'])->name('panel.admin.add-country');
 Route::get('panel/admin/show-scholarship', [AdminController::class, 'ShowScholarShip'])->name('show-scholarship');
+Route::get('panel/admin/edit/{id}', [AdminController::class, 'EditScholarShip']);
 Route::get('panel/admin/del-degree', [AdminController::class, 'delDegree'])->name('del-degree');
 Route::get('panel/admin/del-delscholarship', [AdminController::class, 'delScholarship'])->name('del-delscholarship');
 Route::post('upload', [AdminController::class, 'upload'])->name('upload');
 Route::post('add-scholarship', [AdminController::class, 'Addcholarship']);
+Route::post('edit-scholarship', [AdminController::class, 'Editcholarship']);
 Route::post('add-country', [AdminController::class, 'AddPCountry']);
 Route::post('add-blogs', [AdminController::class, 'AddBlogs']);
 

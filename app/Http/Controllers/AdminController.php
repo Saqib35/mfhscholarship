@@ -112,7 +112,8 @@ class AdminController extends Controller
 
         return DataTables::of($AddScholarship)
             ->addColumn('action', function ($row) {
-                return '<button class="btn btn-danger" id="delscholarship' . $row->id . '" onclick="delscholarship(' . $row->id . ')"><i class="fa fa-trash"></i></button>';
+                return '<button class="btn btn-danger" id="delscholarship' . $row->id . '" onclick="delscholarship(' . $row->id . ')"><i class="fa fa-trash"></i></button>
+                <a href="'.url("panel/admin/edit/".$row->id).'" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
             })
             ->editColumn('scholarship_university_logo', function ($row) {
                 // Assuming you have a 'scholarship_university_logo' column in the database that stores the image filename (e.g., logo.png)
@@ -134,6 +135,17 @@ class AdminController extends Controller
     return view('admin.show-scholarship');
 
    }
+
+   public function EditScholarShip(REQUEST $request)
+   {
+     
+    $countires=Countires::get();
+    $AddDegree=AddDegree::get();
+    $AddScholarship = AddScholarship::where('id',$request->id)->first();
+    return view('admin.editScholarShip',['countries' => $countires,'AddDegree'=>$AddDegree,'Scholarship'=>$AddScholarship]);
+   
+   }
+
 
     public function showCountry()
     {
@@ -271,7 +283,36 @@ class AdminController extends Controller
     }
    
    
-    $addScholarship->save();
+        $addScholarship->save();
+
+        
+        $apiKey = 'MjYzZTM0MWMtMjliNC00MTZiLTg1MzktMjU1MWI2YjY4MDE5';
+        $appId = '524c15cf-c4d6-4482-9fd0-3d2e7a9133f1';
+        $apiEndpoint = 'https://onesignal.com/api/v1/notifications';
+        $data = [
+            'app_id' => $appId,
+            'contents' => [
+                'en' => $request->scholarName
+            ],
+            'included_segments' => ['All'] , // Send to all subscribed users 
+            // 'icon' => '', // Image URL
+            'chrome_web_image' => asset($logos1),
+            'url' =>url($request->scholarSlug), // URL link
+
+        ];
+        $payload = json_encode($data);
+        $ch = curl_init($apiEndpoint);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            'Authorization: Basic ' . $apiKey
+        ]);
+        $response = curl_exec($ch);
+        echo $response;
+        curl_close($ch);
 
 
     return redirect()->back()->with('success', 'Scholarship Added successfully.');
@@ -281,6 +322,57 @@ class AdminController extends Controller
 
     }
 
+    public function Editcholarship(REQUEST $request)
+    {
+
+
+    $scholarshipId = $request->input('id'); // Assuming you have a scholarship ID to identify which record to update
+    
+    
+     $scholarship = AddScholarship::findOrFail($scholarshipId);
+    
+    $scholarship->meta_title = $request->input('metaTitle');
+    $scholarship->meta_keyworlds = $request->input('metaKeyword');
+    $scholarship->meta_description = $request->input('metaDescription');
+    $scholarship->date = $request->input('date');
+    $scholarship->time = $request->input('time');
+    $scholarship->scholarship_name = $request->input('scholarName');
+    $scholarship->scholarship_slug = $request->input('scholarSlug');
+    $scholarship->scholarship_country = $request->input('scholarCountry');
+    $scholarship->scholarship_degree = $request->input('scholarDegree');
+    $scholarship->scholarship_description = $request->input('scholarDecription');
+    $scholarship->scholarship_content = $request->input('content');
+    $scholarship->scholarship_website_url = $request->input('scholarApplyUrl');
+    $scholarship->university_logo_alt_tag = $request->input('university_logo_alt_tag');
+    $scholarship->banner_img_alt_tag = $request->input('banner_img_alt_tag');
+    
+    if ($request->hasFile('scholarUniLogo')) {
+        $dir = public_path('images/');
+        $dir1 = 'images/';       
+        $extension = strtolower($request->file('scholarUniLogo')->getClientOriginalExtension());
+        $fileName = bin2hex(random_bytes(20)) . '.' . $extension;
+        $request->file('scholarUniLogo')->move($dir, $fileName);
+        $logos1 = "{$dir1}{$fileName}";
+        $scholarship->scholarship_university_logo = $logos1;
+    }
+
+    if ($request->hasFile('bannerImg')) {
+        $dir = public_path('images/');
+        $dir1 = 'images/';       
+        $extension = strtolower($request->file('bannerImg')->getClientOriginalExtension());
+        $fileName = bin2hex(random_bytes(20)) . '.' . $extension;
+        $request->file('bannerImg')->move($dir, $fileName);
+        $logos2 = "{$dir1}{$fileName}";
+        $scholarship->scholarship_banner_img = $logos2;
+    }
+   
+    $scholarship->save();
+
+    return redirect()->back()->with('success', 'Scholarship Updated successfully.');
+
+
+
+    }
 
     
     public function AddPCountry(REQUEST $request){
