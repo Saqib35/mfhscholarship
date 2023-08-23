@@ -130,7 +130,7 @@
                     // Handle the response from the server
                    
                     if(response.success==true){
-                        toastr.success('Degree Deleted Successfully', 'success');
+                        toastr.success('Scholarship Deleted Successfully', 'success');
                     }else if(response.success==false){
                         toastr.error('Something went wrong', 'error');
                     }else{
