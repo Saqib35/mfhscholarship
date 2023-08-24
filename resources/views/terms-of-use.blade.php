@@ -1,24 +1,10 @@
 @extends('layouts.main')
 
 @section('css')
-<title>Unlock Your Future with Scholarships: Funding Opportunities for Education</title>
-    <meta name="description" content="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future."/>
-    <meta name="keywords" content="scholarships, education funding, financial aid, scholarship opportunities, academic grants, educational support">
+<title>Terms & conditions</title>
     <meta name="robots" content="follow, index"/>
     <link rel="canonical" href="{{  Request::fullUrl() }}"/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Unlock Your Future with Scholarships: Funding Opportunities for Education"/>
-    <meta property="og:description" content="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future."/>
-    <meta property="og:url" content="{{  Request::fullUrl() }}"/>
-    <meta property="og:site_name" content="MFH Scholarship"/>
-    <meta property="og:image" content="{{ url('assets/logo.png') }}"/>
-    <meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
-    <meta property="og:image:width" content="512"/>
-    <meta property="og:image:height" content="512"/>
-    <meta property="og:image:alt" content="Scholarship"/>
-    <meta property="og:image:type" content="image/jpeg"/>
-
+  
 @endsection
 
 @section('main')
