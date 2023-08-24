@@ -15,7 +15,7 @@
     <!--Main JS-->
     <script src="{{ asset('assets/js/main.js')}}"></script>
     <script src="{{ asset('assets/js/sweet.js')}}"></script>
-    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
 <script>
      
   var OneSignal = window.OneSignal || [];
@@ -25,15 +25,15 @@
       appId: "524c15cf-c4d6-4482-9fd0-3d2e7a9133f1", // Replace with your actual OneSignal App ID
     });
 
-//   OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-//     if (isEnabled) {
-//       console.log('User is subscribed to push notifications.');
-//     } else {
-//       console.log('User is not subscribed to push notifications.');
-//       OneSignal.showSlidedownPrompt();
-//     }
+  OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+    if (isEnabled) {
+      console.log('User is subscribed to push notifications.');
+    } else {
+      console.log('User is not subscribed to push notifications.');
+      OneSignal.showSlidedownPrompt();
+    }
     
-//   });
+  });
 
 
     // Subscribe or Check Player Existence
@@ -100,4 +100,4 @@
   }
 </script>
     
-     -->
+    
