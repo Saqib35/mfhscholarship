@@ -55,47 +55,7 @@
                     <!-- Section Title End -->
 
                     <!-- Contact Form Wrapper Start -->
-                    <div class="contact-form-wrapper contact-form">
-                        <form action="assets/php/amber.php" id="contact-form" method="post">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-                                            <div class="input-area mb-4">
-                                                <input class="input-item" type="text" placeholder="Your Name *" name="name">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="input-area mb-4">
-                                                <input class="input-item" type="email" placeholder="Email *" name="email">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="input-area mb-4">
-                                                <input class="input-item" type="text" placeholder="Subject *" name="subject">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="input-area mb-8">
-                                                <textarea cols="30" rows="5" class="textarea-item" name="message" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <button type="submit" id="submit" name="submit" class="btn btn-primary btn-hover-dark">Send Message</button>
-                                        </div>
-                                        <p class="col-8 form-message mb-0"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <p class="form-messege"></p>
-                    </div>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSFy7uiidt-c1wvRvUCXp3ugUbQO-I6vrQjNFkrOshXOWAsQ/viewform?embedded=true" width="540" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                     <!-- Contact Form Wrapper End -->
 
                 </div>
@@ -126,8 +86,7 @@
 
         <!-- Google Map Area Start -->
         <div class="google-map-area w-100" data-aos="fade-up" data-aos-duration="1000">
-            <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2136.986005919501!2d-73.9685579655238!3d40.75862446708152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258e4a1c884e5%3A0x24fe1071086b36d5!2sThe%20Atrium!5e0!3m2!1sen!2sbd!4v1585132512970!5m2!1sen!2sbd"></iframe>
-        </div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=612&amp;height=400&amp;hl=en&amp;q=united kingdom&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://gachanox.io/">Gacha Nox Download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>        </div>
         <!-- Google Map Area Start -->
 
     </div>

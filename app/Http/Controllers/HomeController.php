@@ -200,7 +200,11 @@ class HomeController extends Controller
 
           if($blogs)
           {
-                return view('blog-details-show',['AddScholarship'=>$blogs,'slug'=>$slug]);
+                $title=$blogs->meta_title;
+                $description=$blogs->meta_description;
+                $keywordss=$blogs->meta_keyworlds;
+                
+                return view('blog-details-show',['AddScholarship'=>$blogs,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywordss]);
 
           }else{
 
