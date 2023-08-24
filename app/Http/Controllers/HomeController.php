@@ -188,7 +188,11 @@ class HomeController extends Controller
 
         if ($AddScholarship) {
             $banner_img = $AddScholarship->scholarship_banner_img;
-            return view('scholarship-details-show',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img]);
+            $title=$AddScholarship->meta_title;
+            $description=$AddScholarship->meta_description;
+            $keywordss=$AddScholarship->meta_keyworlds;
+        
+            return view('scholarship-details-show',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img,'title'=>$title,'description'=>$description,'keywords'=>$keywordss]);
                
         } else {
  
