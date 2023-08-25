@@ -60,11 +60,17 @@ Route::get('panel/admin/show-scholarship', [AdminController::class, 'ShowScholar
 Route::get('panel/admin/edit/{id}', [AdminController::class, 'EditScholarShip']);
 Route::get('panel/admin/del-degree', [AdminController::class, 'delDegree'])->name('del-degree');
 Route::get('panel/admin/del-delscholarship', [AdminController::class, 'delScholarship'])->name('del-delscholarship');
+Route::get('panel/admin/indexing-api-google', [AdminController::class, 'IndexingApi']);
 Route::post('upload', [AdminController::class, 'upload'])->name('upload');
 Route::post('add-scholarship', [AdminController::class, 'Addcholarship']);
 Route::post('edit-scholarship', [AdminController::class, 'Editcholarship']);
 Route::post('add-country', [AdminController::class, 'AddPCountry']);
 Route::post('add-blogs', [AdminController::class, 'AddBlogs']);
+Route::post('panel-admin-submit-api-indexing-google', [AdminController::class, 'SubmitURL']);
+
+
+
+
 
 });
 

@@ -73,7 +73,12 @@
                                 </ul>
                             </li>
 
-
+                            <li>
+                                <a href="{{ url('panel/admin/indexing-api-google') }}" class="has-arrow">
+                                    <i class="fa fa-google" style="font-size: 17px;"></i>
+                                    <span data-key="t-user">Indexing  Api</span>
+                                </a>
+                            </li>
 
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"

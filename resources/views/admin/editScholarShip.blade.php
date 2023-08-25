@@ -119,19 +119,23 @@
                                             </div>
                                             
                                         </div>
-
+                                        <?php
+                                        print_r(json_decode($Scholarship->scholarship_degree));
+                                        
+                                        ?>
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarDegree">Scholarship Degree</label>
-                                                <select class="form-control" name="scholarDegree" id="countrySelect">
-                                                    @foreach($AddDegree as $AddDegree)
-                                                        <option value="{{ $AddDegree['degree_slug'] }}" @if($AddDegree['degree']== $Scholarship->scholarship_degree){{ "selected" }} @endif>{{ $AddDegree['degree'] }}</option>
-                                                    @endforeach
-                                                </select>
+                                                <select class="form-control" name="scholarDegree[]" id="countrySelect" multiple="">
+                                                @foreach($AddDegree as $degree)
+                                                    <option value="{{ $degree['degree_slug'] }}"
+                                                        @if(in_array($degree['degree_slug'], json_decode($Scholarship->scholarship_degree))){{ "selected" }}@endif>
+                                                        {{ $degree['degree_slug'] }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                             </div>
-                                            
                                         </div>
-
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
@@ -183,7 +187,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarApplyUrl">Scholarship Apply Url</label>
-                                                <input id="scholarApplyUrl" value="{{ $Scholarship->scholarship_website_url; }}" required="" name="scholarApplyUrl" type="text" class="form-control">
+                                                <input id="scholarApplyUrl" value="{{ $Scholarship->scholarship_website_url; }}"  name="scholarApplyUrl" type="text" class="form-control">
                                             </div> 
                                         </div>
                                     <br>

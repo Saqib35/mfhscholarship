@@ -9,6 +9,11 @@ use App\Models\AddScholarship;
 use App\Models\Blogs;
 use Yajra\DataTables\DataTables;
 use DB;
+require base_path('app/Http/index-api/vendors/autoload.php');
+use Google;
+use Google_Service_Indexing;
+use Google_Service_Indexing_UrlNotification;
+
 
 class AdminController extends Controller
 {
@@ -348,6 +353,21 @@ class AdminController extends Controller
 
     $scholarshipId = $request->input('id'); // Assuming you have a scholarship ID to identify which record to update
     
+
+    // Get the original scholarship degree array from the request
+    $scholarDegreeArray = $request->input('scholarDegree');
+
+    // Add "all" to the beginning of the array
+    array_unshift($scholarDegreeArray, "all");
+
+
+
+    // Assign the modified array back to the request object
+    $request->merge(['scholarDegree' => $scholarDegreeArray]);
+
+    // Now you can encode it to JSON or use it as needed
+    $encodedScholarDegree = json_encode($scholarDegreeArray);
+    
     
      $scholarship = AddScholarship::findOrFail($scholarshipId);
     
@@ -359,7 +379,7 @@ class AdminController extends Controller
     $scholarship->scholarship_name = $request->input('scholarName');
     $scholarship->scholarship_slug = $request->input('scholarSlug');
     $scholarship->scholarship_country = $request->input('scholarCountry');
-    $scholarship->scholarship_degree = $request->input('scholarDegree');
+    $scholarship->scholarship_degree = $encodedScholarDegree;
     $scholarship->scholarship_description = $request->input('scholarDecription');
     $scholarship->scholarship_content = $request->input('content');
     $scholarship->scholarship_website_url = $request->input('scholarApplyUrl');
@@ -394,7 +414,48 @@ class AdminController extends Controller
 
     }
 
-    
+
+    public function IndexingApi(REQUEST $request){
+
+        return view('admin.indexing-api');
+    }
+
+    public function SubmitURL(REQUEST $request)
+    {
+
+
+      
+        try {
+            $googleClient = new Google\Client();
+
+            $googleClient->setAuthConfig(base_path('app/Http/index-api/service_account_key.json'));
+            $googleClient->setScopes(Google_Service_Indexing::INDEXING);
+            $googleIndexingService = new Google_Service_Indexing($googleClient);
+
+         
+            $urlNotification = new Google_Service_Indexing_UrlNotification([
+                'url' => "https://mfhscholarship.com/terms-of-use",
+                'type' => 'URL_UPDATED'
+            ]);
+
+            $result = $googleIndexingService->urlNotifications->publish($urlNotification);
+
+            if (isset($result->urlNotificationMetadata->latestUpdate["notifyTime"])) {
+                 return redirect()->back()->with('success', 'URL submitted successfully.');
+            
+            } else {
+                 return redirect()->back()->with('error', 'URL not  submitted successfully.');
+            }
+
+        } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'URL not  submitted successfully.');
+        }
+
+
+
+    }
+
+
     public function AddPCountry(REQUEST $request){
 
     

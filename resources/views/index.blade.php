@@ -46,93 +46,7 @@
                </div>
                 
 
-               <!-- <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/1.webp') }}" alt="Scholarship"/>
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-               <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/3.webp') }}" alt="Scholarship" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-              <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/4.webp') }}" alt="Scholarship" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/5.webp') }}" alt="Scholarship" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/6.webp') }}" alt="Scholarship" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-slide-item swiper-slide">
-                    <div class="hero-slide-bg">
-                        <img src="{{ asset('assets/banner/7.webp') }}" alt="Scholarship" />
-                    </div>
-                    <div class="container">
-                        <div class="hero-slide-content text-center text-md-end">
-                            <h5 class="sub-title">We keep pets for pleasure.</h5>
-                            <h2 class="title m-0">Vitamins For all Pets</h2>
-                            <p>We know your concerns when you are looking for a chewing treat for your dog.</p>
-                            
-                        </div>
-                    </div>
-                </div> -->
-
-
-            </div>
+      </div>
 
             <!-- Swiper Pagination Start -->
             <div class="swiper-pagination d-lg-none"></div>
@@ -253,7 +167,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Scholarship">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="{{ $AddScholarships->university_logo_alt_tag }}">
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->
@@ -316,7 +230,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="Scholarship">
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="{{ $AddScholarships->university_logo_alt_tag }}>
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->
