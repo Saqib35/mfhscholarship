@@ -57,7 +57,7 @@
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="meta_title">URL *</label>
-                                            <input id="meta_title" required="" name="meta_title" type="text" class="form-control">
+                                            <input id="meta_title" required="" name="url" type="text" class="form-control">
                                         </div>
                                     </div>
 
@@ -83,35 +83,6 @@
 @endsection
 
 @section('js')
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-<script>
-  
-    CKEDITOR.replace('editor1', {
-        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
-        
-    });
-
-
-    function createSlug(inputString) {
-
-        // Remove special characters and convert to lowercase
-        const cleanedString = inputString
-            .replace(/[^\w\s]/gi, '')
-            .toLowerCase();
-        const slug = cleanedString.replace(/\s+/g, '-');
-         $('#blog_slug').val(slug);
-
-    }
-
-    $(document).ready(function() {
-        $('#countrySelect').select2();
-    });
-
-</script>
 
 @endsection
 

@@ -434,7 +434,7 @@ class AdminController extends Controller
 
          
             $urlNotification = new Google_Service_Indexing_UrlNotification([
-                'url' => "https://mfhscholarship.com/terms-of-use",
+                'url' => $request->url,
                 'type' => 'URL_UPDATED'
             ]);
 
