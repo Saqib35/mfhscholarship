@@ -64,7 +64,7 @@
         <div class="section section-margin-bottom mt-5">
             <div class="container">
                 <div class="row ">
-                    <div class="col-8">
+                    <div class="col-lg-8">
                      {!! $AddScholarship->blog_content !!}
                     </div>      
                     <div class="col-lg-4 right_sidebar">
