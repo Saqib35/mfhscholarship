@@ -128,6 +128,7 @@
                                                     @foreach($AddDegree as $AddDegree)
                                                         <option value="{{ $AddDegree['degree_slug'] }}">{{ $AddDegree['degree'] }}</option>
                                                     @endforeach
+                                                    <option value="internships">Internships</option>
                                                 </select>
                                             </div>
                                             

@@ -114,15 +114,8 @@
                                                         <option value="{{ $country['slug'] }}" @if($country['slug']== $Scholarship->scholarship_country){{ "selected" }} @endif>{{ $country['country_name'] }}</option>
                                                     @endforeach
                                                 </select>
-
-
-                                            </div>
-                                            
+                                          </div>
                                         </div>
-                                        <?php
-                                        print_r(json_decode($Scholarship->scholarship_degree));
-                                        
-                                        ?>
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarDegree">Scholarship Degree</label>
@@ -133,6 +126,8 @@
                                                         {{ $degree['degree_slug'] }}
                                                     </option>
                                                 @endforeach
+                                                <option value="internships"  @if(in_array('internships', json_decode($Scholarship->scholarship_degree))){{ "selected" }}@endif>Internships</option>
+
                                             </select>
                                             </div>
                                         </div>
@@ -144,8 +139,6 @@
                                             </div>
                                             
                                         </div>
-
-                                        
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarUniLogo">Scholarship University Logo</label>

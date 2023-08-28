@@ -181,7 +181,7 @@
                                     </ul>
                                 </div>
                                 <h2 class="blog-title"><a href="{{ url($AddScholarships->scholarship_slug) }}">{{ $AddScholarships->scholarship_name; }}</a></h2>
-                                <p>{{ $AddScholarships->scholarship_description; }}</p>
+                                <p>{{  Str::limit($AddScholarships->scholarship_description, 50); }}</p>
                                 <a class="more-link" href="{{ url($AddScholarships->scholarship_slug) }}">Read More</a>
                             </div>
                             <!-- scholarship Content End -->
@@ -230,7 +230,7 @@
                             <!-- scholarship Thumb Start -->
                             <div class="blog-thumb thumb-effect">
                                 <a class="image" href="{{ url($AddScholarships->scholarship_slug) }}">
-                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="{{ $AddScholarships->university_logo_alt_tag }}>
+                                    <img class="fit-image" src="{{ asset($AddScholarships->scholarship_university_logo)}}" alt="{{ $AddScholarships->university_logo_alt_tag }}">
                                 </a>
                             </div>
                             <!-- scholarship Thumb End -->
@@ -244,7 +244,7 @@
                                     </ul>
                                 </div>
                                 <h2 class="blog-title"><a href="{{ url($AddScholarships->scholarship_slug) }}">{{ $AddScholarships->scholarship_name; }}</a></h2>
-                                <p>{{ $AddScholarships->scholarship_description; }}</p>
+                                <p>{{  Str::limit($AddScholarships->scholarship_description, 50); }}</p>
                                 <a class="more-link" href="{{ url($AddScholarships->scholarship_slug) }}">Read More</a>
                             </div>
                             <!-- scholarship Content End -->
