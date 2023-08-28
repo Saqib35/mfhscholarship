@@ -71,7 +71,7 @@
                     </div>      
                     <div class="col-lg-4 right_sidebar">
                         <div class="container">
-                            <div class="row">324324324234
+                            <div class="row">
                                 @php
                                 $tenDaysAgo =  \Carbon\Carbon::now()->subDays(10);
                                 $scholarship_related = DB::table('add_scholarships')
