@@ -126,8 +126,7 @@
                                                         {{ $degree['degree_slug'] }}
                                                     </option>
                                                 @endforeach
-                                                <option value="internships"  @if(in_array('internships', json_decode($Scholarship->scholarship_degree))){{ "selected" }}@endif>Internships</option>
-
+                                               
                                             </select>
                                             </div>
                                         </div>
