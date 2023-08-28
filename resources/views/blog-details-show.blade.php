@@ -29,7 +29,7 @@
                 height: 100%;
                 width: 100%
             }
-            @media screen and (max-width: 991){
+            @media only screen and (min-width: 320px) and (max-width: 991px) {
                 .right_sidebar{
                     display: none;
                 }

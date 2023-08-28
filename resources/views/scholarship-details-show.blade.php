@@ -30,11 +30,12 @@
                 height: 100%;
                 width: 100%
             }
-            @media screen and (max-width: 991){
+            @media only screen and (min-width: 320px) and (max-width: 991px) {
                 .right_sidebar{
                     display: none;
                 }
             }
+            
         </style>
    
 @endsection
@@ -70,7 +71,7 @@
                     </div>      
                     <div class="col-lg-4 right_sidebar">
                         <div class="container">
-                            <div class="row">
+                            <div class="row">324324324234
                                 @php
                                 $tenDaysAgo =  \Carbon\Carbon::now()->subDays(10);
                                 $scholarship_related = DB::table('add_scholarships')
