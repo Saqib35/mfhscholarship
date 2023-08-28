@@ -45,12 +45,12 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title">
+                        <h2 class="breadcrumb-title text-white">
                             {{ $modifiedString = str_replace('-', ' ', $slug); }}
                         </h2>
                         <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li>{{ $modifiedString = str_replace('-', ' ', $slug); }}</li>
+                            <li><a href="{{ url('/') }}" class="text-white">Home</a></li>
+                            <li class="text-white">{{ $modifiedString = str_replace('-', ' ', $slug); }}</li>
                         </ul>
                     </div>
                 </div>
