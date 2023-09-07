@@ -151,6 +151,14 @@ class AdminController extends Controller
    
    }
 
+   public function EditScholarShipBlog(REQUEST $request)
+   {
+     
+    $EditBlogs = Blogs::where('id',$request->id)->first();
+    return view('admin.edit-blog',['EditBlogs'=>$EditBlogs]);
+   
+   }
+
 
     public function showCountry()
     {
@@ -184,7 +192,8 @@ class AdminController extends Controller
             
             return DataTables::of($Blogs)
             ->addColumn('action', function ($row) {
-                return '<button class="btn btn-danger" id="delscholarship' . $row->id . '" onclick="delscholarship(' . $row->id . ')"><i class="fa fa-trash"></i></button>';
+                return '<button class="btn btn-danger" id="delscholarship' . $row->id . '" onclick="delscholarship(' . $row->id . ')"><i class="fa fa-trash"></i></button>
+                <a href="'.url("panel/admin/edit/blog/".$row->id).'" class="btn btn-primary"><i class="fa fa-edit"></i></a>';
             })
             ->editColumn('blog_img', function ($row) {
                 // Assuming you have a 'scholarship_university_logo' column in the database that stores the image filename (e.g., logo.png)
@@ -278,6 +287,7 @@ class AdminController extends Controller
     $addScholarship->scholarship_website_url = $request->scholarApplyUrl;
     $addScholarship->university_logo_alt_tag = $request->university_logo_alt_tag;
     $addScholarship->banner_img_alt_tag = $request->banner_img_alt_tag;
+    $addScholarship->schemass = $request->schema;
     
    
    
@@ -385,7 +395,8 @@ class AdminController extends Controller
     $scholarship->scholarship_website_url = $request->input('scholarApplyUrl');
     $scholarship->university_logo_alt_tag = $request->input('university_logo_alt_tag');
     $scholarship->banner_img_alt_tag = $request->input('banner_img_alt_tag');
-    
+    $scholarship->schemass = $request->schema;
+
     if ($request->hasFile('scholarUniLogo')) {
         $dir = public_path('images/');
         $dir1 = 'images/';       
@@ -410,6 +421,57 @@ class AdminController extends Controller
 
     return redirect()->back()->with('success', 'Scholarship Updated successfully.');
 
+
+
+    }
+
+    public function EditBlog(REQUEST $request)
+    {
+       
+        $addScholarship = Blogs::findOrFail($request->blog_id);
+        $addScholarship->meta_title = $request->meta_title;
+        $addScholarship->meta_keyworlds = $request->meta_keyworlds;
+        $addScholarship->meta_description = $request->meta_description;
+        $addScholarship->blog_name = $request->blog_name;
+        $addScholarship->blog_slug = $request->blog_slug;
+        $addScholarship->blog_category = $request->blog_category;
+        $addScholarship->blog_description = $request->blog_description;
+        $addScholarship->blog_img_alt_tag = $request->blog_img_alt_tag;
+        $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
+        $addScholarship->blog_content = $request->blog_content;
+        $addScholarship->schemass = $request->schema;
+
+    
+        if($request->hasFile('blog_img'))
+        {
+              $dir =  public_path('blogs_images/');
+              $dir1 = 'blogs_images/';            
+              $extension = strtolower($request['blog_img']->getClientOriginalExtension()); // get image extension
+              $fileName = bin2hex(random_bytes(20)).'.'. $extension; // rename image
+              $request['blog_img']->move($dir, $fileName);
+              $logos1 ="{$dir1}{$fileName}";
+              $addScholarship->blog_img = $logos1;
+                
+        }
+    
+    
+        if($request->hasFile('blog_banner'))
+        {
+              $dir =  public_path('blogs_images/');
+              $dir1 = 'blogs_images/';            
+              $extension = strtolower($request['blog_banner']->getClientOriginalExtension()); // get image extension
+              $fileName = bin2hex(random_bytes(20)).'.'. $extension; // rename image
+              $request['blog_banner']->move($dir, $fileName);
+              $logos2 ="{$dir1}{$fileName}";
+              $addScholarship->blog_banner = $logos2;
+          
+        }
+       
+       
+        $addScholarship->save();
+    
+        return redirect()->back()->with('success', 'Blogs Updated successfully.');
+    
 
 
     }
@@ -503,7 +565,8 @@ class AdminController extends Controller
         $addScholarship->blog_img_alt_tag = $request->blog_img_alt_tag;
         $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
         $addScholarship->blog_content = $request->blog_content;
-        
+        $addScholarship->schemass = $request->schema;
+
     
         if($request->hasFile('blog_img'))
         {

@@ -21,7 +21,8 @@ class Blogs extends Model
         'blog_img_alt_tag',
         'blog_banner',
         'blog_banner_alt_tag',
-        'blog_contentss'        
+        'blog_contentss',
+        'schemass'     
     ];
  
 }

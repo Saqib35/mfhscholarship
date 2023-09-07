@@ -26,7 +26,7 @@
                 <!-- start page title -->
                 <?php
                 $maintitle = "MFH Scholarship";
-                $title = "Add Blog";
+                $title = "Edit Blog";
                 ?>
                 
                 @include ('admin.layouts.breadcrumb')
@@ -47,12 +47,14 @@
                                 <h4 class="card-title mb-0">Blog Details</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ url('add-blogs') }}" enctype='multipart/form-data' method="post" id="myForm" class="drozone">
+                                <form action="{{ url('edit-blog') }}" enctype='multipart/form-data' method="post" id="myForm" class="drozone">
                                  @csrf
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="meta_title">Meta Title</label>
-                                                <input id="meta_title" required="" name="meta_title" type="text" class="form-control">
+                                                <input id="meta_title" required="" value="{{ $EditBlogs['meta_title'] }}" name="meta_title" type="text" class="form-control">
+
+                                                <input id="blog_id" required="" hidden value="{{ $EditBlogs['id'] }}" name="blog_id" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -60,7 +62,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="meta_keyworlds">Meta Keyworlds</label>
-                                                <input id="meta_keyworlds" required="" name="meta_keyworlds" type="text" class="form-control">
+                                                <input id="meta_keyworlds" required=""  value="{{ $EditBlogs['meta_keyworlds'] }}" name="meta_keyworlds" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -68,7 +70,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="meta_description">Meta Description</label>
-                                                <input id="meta_description" required="" name="meta_description" type="text" class="form-control">
+                                                <input id="meta_description" required=""  value="{{ $EditBlogs['meta_description'] }}" name="meta_description" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -78,7 +80,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_name">Blog Name</label>
-                                                <input id="blog_name" onkeyup="createSlug(this.value)" required="" name="blog_name" type="text" class="form-control">
+                                                <input id="blog_name" onkeyup="createSlug(this.value)"  value="{{ $EditBlogs['blog_name'] }}"  required="" name="blog_name" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -86,22 +88,19 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_slug">Slug</label>
-                                                <input id="blog_slug"  required="" name="blog_slug" type="text" class="form-control">
+                                                <input id="blog_slug"  required="" value="{{ $EditBlogs['blog_slug'] }}"  name="blog_slug" type="text" class="form-control">
                                             </div>
                                         </div>
-
-                                        
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_category">Blog Category</label>
                                                 <select class="form-control" name="blog_category" id="countrySelect" required="">
-                                                    <option value="internships">Internships</option>
-                                                    <option value="application-resources">Application Resources</option>
-                                                    <option value="scholarships-and-study">Scholarships and Study</option>
-                                                    <option value="employment-and-profession">Employment and Profession</option>
-                                                    <option value="our-blogs">Our Blogs</option>
-                                                    
+                                                    <option value="internships" <?php if($EditBlogs['blog_category']=='internships'){ echo "selected";} ?>>Internships</option>
+                                                    <option value="application-resources" <?php if($EditBlogs['blog_category']=='application-resources'){ echo "selected";} ?>>Application Resources</option>
+                                                    <option value="scholarships-and-study" <?php if($EditBlogs['blog_category']=='scholarships-and-study'){ echo "selected";} ?>>Scholarships and Study</option>
+                                                    <option value="employment-and-profession" <?php if($EditBlogs['blog_category']=='employment-and-profession'){ echo "selected";} ?>>Employment and Profession</option>
+                                                    <option value="other-blogs"  <?php if($EditBlogs['blog_category']=='our-blogs'){ echo "selected";} ?>>Our Blogs</option>
                                                 </select>
                                             </div>
                                             
@@ -111,7 +110,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_description">Blog Description</label>
-                                                <input id="blog_description" required="" name="blog_description" type="text" class="form-control">
+                                                <input id="blog_description" required="" value="{{ $EditBlogs['blog_description']; }}" name="blog_description" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -120,7 +119,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_img">Blog Image</label>
-                                                <input id="blog_img" required="" name="blog_img" type="file" class="form-control">
+                                                <input id="blog_img"  name="blog_img" type="file" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -128,7 +127,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_img_alt_tag">Blog Image Alt Tag</label>
-                                                <input id="	blog_img_alt_tag" required="" name="blog_img_alt_tag" type="text" class="form-control">
+                                                <input id="	blog_img_alt_tag" required="" value="{{  $EditBlogs['blog_img_alt_tag']; }}" name="blog_img_alt_tag" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -136,7 +135,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_banner">Blog Banner Img</label>
-                                                <input id="blog_banner" required="" name="blog_banner" type="file" class="form-control">
+                                                <input id="blog_banner"  name="blog_banner" type="file" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -144,7 +143,7 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_banner_alt_tag">Blog Banner Img Alt Tag</label>
-                                                <input id="blog_banner_alt_tag" required="" name="blog_banner_alt_tag" type="text" class="form-control">
+                                                <input id="blog_banner_alt_tag" required="" value="{{  $EditBlogs['blog_banner_alt_tag']; }}" name="blog_banner_alt_tag" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
@@ -152,62 +151,16 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_content">Blog Details</label>
-                                                <textarea name="blog_content" id="editor1" class="form-control"></textarea>
+                                                <textarea name="blog_content" id="editor1" class="form-control">{{ $EditBlogs['blog_content'] }}</textarea>
                                             </div>
                                         </div>
 
+                                          {{ url($EditBlogs['blog_img']) }}
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="schema">Schema Json</label>
                                                 <textarea id="schema"  name="schema" rows="20" class="form-control">
-<script type="application/ld+json">
-{
-"@context": "http://schema.org/",
-"@type": "WebSite",
-"name": "mfhscholarship",
-"alternateName": "mfhscholarship",
-"url": "https://mfhscholarship.com/"
-}
-</script>
-
-<script type="application/ld+json">
-
-{
-    "@context": "http://schema.org/",
-    "@type": "Scholarship",
-    "name": "Scholarship Name",
-    "description": "Description of the scholarship opportunity.",
-    "image": "https://example.com/scholarship-image.jpg",
-    "provider": {
-        "@type": "Organization",
-        "name": "Scholarship Provider Name",
-        "url": "https://example.com/provider-website"
-    },
-    "awardAmount": "1000 USD",
-    "eligibility": "Eligibility requirements for the scholarship.",
-    "applicationProcess": "Instructions for applying for the scholarship.",
-    "terms": "Terms and conditions of the scholarship.",
-    "url": "https://mfhscholarship.com/", // Include the scholarship website URL here
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.4",
-        "bestRating": "5",
-        "reviewCount": "275"
-    },
-    "review": {
-        "@context": "http://schema.org/",
-        "name": "Best Rating",
-        "@type": "Review",
-        "reviewBody": "Effectively",
-        "author": {
-        "@type": "Person",
-        "name": "nameowner"
-        }
-    }
-    }
-    </script>
-    
-                                                
+                                                {{ $EditBlogs['schemass'] }}
                                                 </textarea>
                                             </div> 
                                         </div>

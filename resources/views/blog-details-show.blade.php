@@ -14,12 +14,24 @@
 <meta property="og:description" content="{{ $description }}"/>
 <meta property="og:url" content="{{  Request::fullUrl() }}"/>
 <meta property="og:site_name" content="MFH Scholarship"/>
-<meta property="og:image" content="{{ url('assets/logo.png') }}"/>
-<meta property="og:image:secure_url" content="{{ url('assets/logo.png') }}"/>
+<meta property="og:image" content="{{ url($AddScholarship->blog_img) }}"/>
+<meta property="og:image:secure_url" content="{{ url($AddScholarship->blog_img) }}"/>
 <meta property="og:image:width" content="512"/>
 <meta property="og:image:height" content="512"/>
-<meta property="og:image:alt" content="Scholarship"/>
+<meta property="og:image:alt" content="{{ $AddScholarship->blog_img_alt_tag }}"/>
 <meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image:type" content="image/png"/>
+@php
+
+if(!empty($AddScholarship->schemass))
+{
+    echo $AddScholarship->schemass;
+@endphp
+@php
+}else{
+  echo  "Empty";
+}
+@endphp
  <style>
             .img-side{
                 height: 100px;

@@ -177,6 +177,28 @@ class HomeController extends Controller
         return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
     
     }
+
+    public function showAllBlogs(REQUEST $request)
+    {
+      
+            $title="Streamline Your Journey: Essential Application Resources for Success";
+            $description="Access a wealth of application resources to enhance your chances of success. Our comprehensive guide provides valuable insights, tips, and tools to help you navigate the application process with confidence and achieve your goals.";
+            $keywords="application resources, application tips, application guidelines, application tools, application success, application support";
+            $slug='Our  Blogs';
+            $AddScholarship = Blogs::orderByRaw('blog_category = ? DESC', ['our-blogs'])
+            ->orderBy('priority', 'asc')
+            ->paginate(9);
+        
+
+           
+        
+
+      
+      
+            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+    
+      
+    }
     
 
     public function ShowScholarDetails(REQUEST $request)

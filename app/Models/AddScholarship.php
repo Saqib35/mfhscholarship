@@ -25,7 +25,8 @@ class AddScholarship extends Model
         'scholarship_content',
         'scholarship_website_url',
         'university_logo_alt_tag',
-        'banner_img_alt_tag'
+        'banner_img_alt_tag',
+        'schemass'
     ];
     
 }

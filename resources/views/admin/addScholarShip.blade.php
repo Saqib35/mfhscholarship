@@ -182,6 +182,65 @@
                                                 <textarea name="content" id="editor1" class="form-control"></textarea>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="schema">Schema Json</label>
+                                                <textarea id="schema"  name="schema" rows="20" class="form-control">
+<script type="application/ld+json">
+{
+"@context": "http://schema.org/",
+"@type": "WebSite",
+"name": "mfhscholarship",
+"alternateName": "mfhscholarship",
+"url": "https://mfhscholarship.com/"
+}
+</script>
+
+<script type="application/ld+json">
+
+{
+    "@context": "http://schema.org/",
+    "@type": "Scholarship",
+    "name": "Scholarship Name",
+    "description": "Description of the scholarship opportunity.",
+    "image": "https://example.com/scholarship-image.jpg",
+    "provider": {
+        "@type": "Organization",
+        "name": "Scholarship Provider Name",
+        "url": "https://example.com/provider-website"
+    },
+    "awardAmount": "1000 USD",
+    "eligibility": "Eligibility requirements for the scholarship.",
+    "applicationProcess": "Instructions for applying for the scholarship.",
+    "terms": "Terms and conditions of the scholarship.",
+    "url": "https://mfhscholarship.com/", // Include the scholarship website URL here
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "bestRating": "5",
+        "reviewCount": "275"
+    },
+    "review": {
+        "@context": "http://schema.org/",
+        "name": "Best Rating",
+        "@type": "Review",
+        "reviewBody": "Effectively",
+        "author": {
+        "@type": "Person",
+        "name": "nameowner"
+        }
+    }
+    }
+    </script>
+                                                    
+                                                
+                                                </textarea>
+                                            </div> 
+                                        </div>
+
+
+
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarApplyUrl">Scholarship Apply Url</label>
@@ -200,7 +259,12 @@
                 </div>
                 <!-- end row -->
             </div> <!-- container-fluid -->
+       
+           
         </div>
+    
+
+
         <!-- End Page-content -->
 
         @include ('admin.layouts.footer')

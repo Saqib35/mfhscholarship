@@ -48,6 +48,7 @@
                                     <li class="has-children">
                                         <a href="javascript: void(0)" class="@if(request()->is('category/blog/application-resources') || request()->is('category/blog/scholarships-and-study') || request()->is('category/blog/employment-and-profession')) active @endif">Blogs</a>
                                         <ul class="sub-menu">
+                                            <li><a class="@if(request()->is('our-blogs')) active-tab @endif" href="{{ url('blogs'); }}">Our Blogs</a></li>
                                             <li><a class="@if(request()->is('category/blog/application-resources')) active-tab @endif" href="{{ url('category/blog/application-resources'); }}">Applications Documents</a></li>
                                             <li><a class="@if(request()->is('category/blog/scholarships-and-study')) active-tab @endif" href="{{ url('category/blog/scholarships-and-study'); }}">Scholarships / Study</a></li>
                                             <li><a class="@if(request()->is('category/blog/employment-and-profession')) active-tab @endif" href="{{ url('category/blog/employment-and-profession'); }}">Employment / Profession</a></li>

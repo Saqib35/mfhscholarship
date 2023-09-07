@@ -54,6 +54,7 @@
                                             <div class="mb-3">
                                                 <label for="metaTitle">Meta Title</label>
                                                 <input id="metaTitle" required="" value="{{ $Scholarship->meta_title; }}" name="metaTitle" type="text" class="form-control">
+                                                
                                             </div>
                                             
                                         </div>
@@ -175,6 +176,13 @@
                                                 <label for="scholarDetails">Scholarship Details</label>
                                                 <textarea name="content"  id="editor1" class="form-control">{{ $Scholarship->scholarship_content; }}</textarea>
                                             </div>
+                                        </div>
+                                        {{ url($Scholarship->scholarship_university_logo); }}
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label for="schema">Schema Json</label>
+                                                <textarea id="schema"  name="schema" rows="20" class="form-control">{{ $Scholarship->schemass; }}</textarea>
+                                            </div> 
                                         </div>
                                         <div class="col-md-12">
                                             <div class="mb-3">

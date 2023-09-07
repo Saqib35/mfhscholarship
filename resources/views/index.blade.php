@@ -114,7 +114,7 @@
 
                 <div class="col mb-6" data-aos="fade-up" data-aos-duration="1200">
                     <!-- Single CTA Wrapper Start -->
-                    <a href="{{ url('category/blog/scholarships-and-study') }}">
+                    <a href="{{ url('blogs') }}">
                     <div class="single-cta-wrapper">
 
                         <!-- CTA Icon Start -->

@@ -26,6 +26,9 @@ Route::get('blog-details', function () {return view('blog-details-sidebar');});
 Route::get('scholarships-by-countries/', [HomeController::class, 'scholarshipByCountry']);
 Route::get('category/{slug?}/', [HomeController::class, 'showscholarshipCountry']);
 Route::get('category/blog/{slug?}', [HomeController::class, 'showBlogHome']);
+Route::get('blogs', [HomeController::class, 'showAllBlogs']);
+
+
 Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
@@ -58,6 +61,7 @@ Route::get('panel/admin/add-scholarship', [AdminController::class, 'addScholarSh
 Route::get('panel/admin/add-country', [AdminController::class, 'addCountry'])->name('panel.admin.add-country');
 Route::get('panel/admin/show-scholarship', [AdminController::class, 'ShowScholarShip'])->name('show-scholarship');
 Route::get('panel/admin/edit/{id}', [AdminController::class, 'EditScholarShip']);
+Route::get('panel/admin/edit/blog/{id}', [AdminController::class, 'EditScholarShipBlog']);
 Route::get('panel/admin/del-degree', [AdminController::class, 'delDegree'])->name('del-degree');
 Route::get('panel/admin/del-delscholarship', [AdminController::class, 'delScholarship'])->name('del-delscholarship');
 Route::get('panel/admin/indexing-api-google', [AdminController::class, 'IndexingApi']);
@@ -66,6 +70,7 @@ Route::post('add-scholarship', [AdminController::class, 'Addcholarship']);
 Route::post('edit-scholarship', [AdminController::class, 'Editcholarship']);
 Route::post('add-country', [AdminController::class, 'AddPCountry']);
 Route::post('add-blogs', [AdminController::class, 'AddBlogs']);
+Route::post('edit-blog', [AdminController::class, 'EditBlog']);
 Route::post('panel-admin-submit-api-indexing-google', [AdminController::class, 'SubmitURL']);
 
 
