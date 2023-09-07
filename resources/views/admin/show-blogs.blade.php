@@ -103,6 +103,41 @@
         
         });
 
+
+        function delscholarship(id){
+            var buttonId = 'delscholarship' + id;
+             $('#' + buttonId).closest('tr').remove();
+             
+              $.ajax({
+                url: "{{ route('del-degrees') }}",
+                type: "GET",
+                data: {
+                    // Include any data you want to send to the server
+                    id: id, 
+                },
+                dataType: "json",
+                success: function(response) {
+                    // Handle the response from the server
+                   
+                    if(response.success==true){
+                        toastr.success('Blogs Deleted Successfully', 'success');
+                    }else if(response.success==false){
+                        toastr.error('Something went wrong', 'error');
+                    }else{
+                        toastr.error('Something went wrong', 'error');
+                    }
+            
+                },
+                error: function(xhr, status, error) {
+            
+                toastr.error('Something went wrong', 'error');
+
+                }
+            });
+            
+
+
+         } 
       
     </script>
 @endsection

@@ -67,6 +67,27 @@ class AdminController extends Controller
     }
 
 
+    public function delDegrees(REQUEST $request)
+    {
+
+        $degree = Blogs::find($request->id);
+
+        if ($degree) {
+            $degree->delete();
+            // Check if the model instance no longer exists in the database after deletion
+            if (!$degree->exists) {
+                return response()->json(['success' => true]);
+            } else {
+                return response()->json(['success' => false]);
+            }
+        } else {
+            return response()->json(['success' => false]);
+        }
+
+
+    }
+
+
     
     public function delScholarship(REQUEST $request)
     {

@@ -28,8 +28,6 @@ if(!empty($AddScholarship->schemass))
     echo $AddScholarship->schemass;
 @endphp
 @php
-}else{
-  echo  "Empty";
 }
 @endphp
  <style>
