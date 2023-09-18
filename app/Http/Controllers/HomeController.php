@@ -28,6 +28,29 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function ShowFeed()
+    {
+
+            $AddScholarship = AddScholarship::orderBy('created_at', 'desc')->take(1)->get();
+    
+            $feed = Feed::make();
+            $feed->title = 'My Blog RSS Feed';
+            $feed->description = 'Latest blog posts';
+            $feed->link = route('home');
+    
+            foreach ($posts as $post) {
+                $feed->add($AddScholarship->title, $AddScholarship->published_at, route('post.show', $AddScholarship->slug), $AddScholarship->content);
+            }
+    
+            return Response::make($feed->render('rss'))->header('Content-Type', 'text/xml');
+    
+    }
+    
+
+
+
+
     public function index()
     {
         $latestScholarships = AddScholarship::orderBy('created_at', 'desc')->paginate(6);

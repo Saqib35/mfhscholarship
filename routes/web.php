@@ -41,6 +41,10 @@ Route::get('disclaimer', function () {return view('disclaimer');});
 Route::get('privacy-policy', function () {return view('privacy-policy');});
 Route::get('terms-of-use', function () {return view('terms-of-use');});
 Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
+
+
+Route::get('feed', [HomeController::class, 'ShowFeed']);
+
 Route::fallback(function () { return view('errors.404');});
 
 
