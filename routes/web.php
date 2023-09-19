@@ -28,6 +28,7 @@ Route::get('category/{slug?}/', [HomeController::class, 'showscholarshipCountry'
 Route::get('category/blog/{slug?}', [HomeController::class, 'showBlogHome']);
 Route::get('blogs', [HomeController::class, 'showAllBlogs']);
 
+Route::get('feed', [HomeController::class, 'ShowFeed']);
 
 Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
 Route::get('search', [HomeController::class, 'search'])->name('search');
@@ -43,7 +44,6 @@ Route::get('terms-of-use', function () {return view('terms-of-use');});
 Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
 
 
-Route::get('feed', [HomeController::class, 'ShowFeed']);
 
 Route::fallback(function () { return view('errors.404');});
 

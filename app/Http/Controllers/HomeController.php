@@ -8,6 +8,10 @@ use App\Models\AddScholarship;
 use App\Models\AddDegree;
 use App\Models\Blogs;
 use DB;
+use Illuminate\Support\Facades\Response;
+
+
+
 
 
 
@@ -31,20 +35,16 @@ class HomeController extends Controller
 
     public function ShowFeed()
     {
+          
+         
+         $posts =AddScholarship::orderBy('created_at', 'desc')->take(10)->get();
+        
+  
+         return response()->view('rss', [
+             'posts' => $posts
+         ])->header('Content-Type', 'text/xml');
 
-            $AddScholarship = AddScholarship::orderBy('created_at', 'desc')->take(1)->get();
-    
-            $feed = Feed::make();
-            $feed->title = 'My Blog RSS Feed';
-            $feed->description = 'Latest blog posts';
-            $feed->link = route('home');
-    
-            foreach ($posts as $post) {
-                $feed->add($AddScholarship->title, $AddScholarship->published_at, route('post.show', $AddScholarship->slug), $AddScholarship->content);
-            }
-    
-            return Response::make($feed->render('rss'))->header('Content-Type', 'text/xml');
-    
+
     }
     
 
