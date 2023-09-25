@@ -189,50 +189,42 @@
                                                 <textarea id="schema"  name="schema" rows="20" class="form-control">
 <script type="application/ld+json">
 {
-"@context": "http://schema.org/",
-"@type": "WebSite",
-"name": "mfhscholarship",
-"alternateName": "mfhscholarship",
-"url": "https://mfhscholarship.com/"
+  "@context": "http://schema.org/",
+  "@type": "EducationalOrganization",
+  "name": "MFH Scholarship",
+  "url": "https://mfhscholarship.com",
+  "description": "Discover exciting opportunities with the Microsoft Internship Program"
 }
 </script>
 
 <script type="application/ld+json">
-
-{
-    "@context": "http://schema.org/",
-    "@type": "Scholarship",
-    "name": "Scholarship Name",
-    "description": "Description of the scholarship opportunity.",
-    "image": "https://example.com/scholarship-image.jpg",
-    "provider": {
-        "@type": "Organization",
-        "name": "Scholarship Provider Name",
-        "url": "https://example.com/provider-website"
-    },
-    "awardAmount": "1000 USD",
-    "eligibility": "Eligibility requirements for the scholarship.",
-    "applicationProcess": "Instructions for applying for the scholarship.",
-    "terms": "Terms and conditions of the scholarship.",
-    "url": "https://mfhscholarship.com/", // Include the scholarship website URL here
-    "aggregateRating": {
+    {
+     "@context": "https://schema.org",
+     "@type": "EducationalOrganization",
+      "name": "MFH Scholarship",
+      "alternateName": "MFH Scholarship",
+      "url": "https://mfhscholarship.com",
+      "logo": "https://mfhscholarship.com/assets/logo.png",
+      "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.4",
         "bestRating": "5",
         "reviewCount": "275"
-    },
-    "review": {
+      },
+      "review": {
         "@context": "http://schema.org/",
         "name": "Best Rating",
         "@type": "Review",
-        "reviewBody": "Effectively",
-        "author": {
-        "@type": "Person",
-        "name": "nameowner"
-        }
+        "reviewBody": "Effectively clear drain lines with professional jetting services. Ensure optimal plumbing function with expert solutions.",
+        "author": {"@type": "Person", "name": "nameowner"}
+      },
+      "votes": {
+        "@type": "VoteAction",
+        "upvoteCount": "80",
+        "downvoteCount": "20"
+      }
     }
-    }
-    </script>
+</script>
                                                     
                                                 
                                                 </textarea>
