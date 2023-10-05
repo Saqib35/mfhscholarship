@@ -6,7 +6,7 @@
                 <div class="row mb-n8">
                     <div class="col-12 col-sm-6 col-lg-3 mb-8" data-aos="fade-up" data-aos-duration="1000">
                         <div class="single-footer-widget">
-                            <h1 class="widget-title">About Us</h1>
+                            <h2 class="widget-title">About Us</h2>
                             <p class="desc-content">If you're looking for information on scholarships for international students, you've come to the right place. The mfhscholarship.com website provides a wealth of resources for students who are interested in pursuing a degree at an accredited institution of higher education.</p>
                             <!-- Soclial Link Start -->
                             <div class="widget-social justify-content-start mb-n2">
