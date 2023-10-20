@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title text-white">Scholarships by Countries</h2>
+                        <h1 class="breadcrumb-title text-white">Scholarships by Countries</h1>
                         <ul>
                             <li><a href="{{ url('/') }}" class="text-white">Home</a></li>
                             <li class="text-white">Scholarships by Countries</li>
