@@ -1,8 +1,9 @@
 @extends('layouts.main')
 
 @section('css')
-<title>Unlock Your Future with Scholarships: Funding Opportunities for Education</title>
-    <meta name="description" content="Explore a world of scholarship opportunities to fund your education. Discover various scholarships, grants, and financial aids to pursue your academic dreams and shape a brighter future."/>
+<title>Latest Scholarships Application for Education |  MFH Scholarship</title>
+    <meta name="description" content="Apply for the MFH Scholarship and secure your education funding with the latest scholarships program. Learn how to access financial aid for your academic journey.
+"/>
     <meta name="keywords" content="scholarships, education funding, financial aid, scholarship opportunities, academic grants, educational support">
     <meta name="robots" content="follow, index"/>
     <link rel="canonical" href="{{  Request::fullUrl() }}"/>
@@ -144,7 +145,7 @@
             <div class="row mt-3" data-aos="fade-up" data-aos-duration="1000">
                 <div class="col-12">
                     <div class="section-title text-center">
-                        <h2 class="title" style="color:#F6AB49;font-weight:bold">Lastest Scholarships</h2>
+                        <h1 class="title" style="color:#F6AB49;font-weight:bold">Lastest Scholarships</h1>
                     </div>
                 </div>
             </div>
