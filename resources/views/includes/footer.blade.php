@@ -73,7 +73,7 @@
                 <div class="row align-items-center mb-n4">
                     <div class="col-md-12 text-center text-md-start mb-4">
                         <div class="copyright-content text-center">
-                            <p class="mb-0">© 2023 <strong>MFH Scholarship </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://softhubusa.com/">Softhub USA.</a></p>
+                            <p class="mb-0">© 2023 <strong>MFH Scholarship </strong> Made with <i class="fa fa-heart text-danger"></i> by <a rel="nofollow" href="https://softhubusa.com/">Softhub USA.</a></p>
                         </div>
                     </div>
                 </div>
