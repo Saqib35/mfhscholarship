@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('css')
-<title>Country Scholarships: Investing in Your Education Locally for Global Success</title>
-    <meta name="description" content="Explore country-specific scholarships that pave the way for local students to achieve global success. Discover funding options tailored to your region, ensuring a solid educational foundation and promising future."/>
+<title>International Scholarships Application | MFH Scholarship </title>
+    <meta name="description" content="Explore the process of international scholarships application. Unlock opportunities for global education with our comprehensive guide and resources. Contact us"/>
     <meta name="keywords" content="country scholarship, local student scholarships, regional education funding, national academic grants, educational opportunities by country">
     <meta name="robots" content="follow, index"/>
     <link rel="canonical" href="{{  Request::fullUrl() }}"/>
