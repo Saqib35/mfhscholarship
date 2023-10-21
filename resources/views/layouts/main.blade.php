@@ -29,7 +29,7 @@
   gtag('config', 'G-27QN3YMWC6');
 </script>
 
-    Google webmaster
+    <!-- Google webmaster -->
 <meta name="google-site-verification" content="SJzx-hi6bG6DwK80E_G7YIo25T2KSJwGsOS357sPvS4" />
 
     
