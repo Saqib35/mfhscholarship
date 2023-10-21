@@ -18,7 +18,19 @@
 
     @include('includes.cssLinks')
     @yield('css')
-    
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-27QN3YMWC6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-27QN3YMWC6');
+</script>
+
+    Google webmaster
+<meta name="google-site-verification" content="SJzx-hi6bG6DwK80E_G7YIo25T2KSJwGsOS357sPvS4" />
 
     
     <style>
