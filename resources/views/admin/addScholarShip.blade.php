@@ -124,7 +124,7 @@
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="scholarDegree">Scholarship Degree</label>
+                                                <label for="scholarDegree">Scholarship Degree <span style="color:red">( Select Dropdown which section you want to add , Press Control)</span></label>
                                                 <select class="form-control" name="scholarDegree[]" id="countrySelect" multiple="">
                                                     @foreach($AddDegree as $AddDegree)
                                                         <option value="{{ $AddDegree['degree_slug'] }}">{{ $AddDegree['degree'] }}</option>
@@ -147,7 +147,7 @@
                                         
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="scholarUniLogo">Scholarship University Logo</label>
+                                                <label for="scholarUniLogo">Scholarship Logo</label>
                                                 <input id="scholarUniLogo" required="" name="scholarUniLogo" type="file" class="form-control">
                                             </div>
                                             
@@ -155,13 +155,13 @@
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label for="university_logo_alt_tag">University Logo Alt Tag</label>
+                                                <label for="university_logo_alt_tag">IMG Alt Tag</label>
                                                 <input id="university_logo_alt_tag" required="" name="university_logo_alt_tag" type="text" class="form-control">
                                             </div>
                                             
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="bannerImg">Banner Img</label>
                                                 <input id="bannerImg" required="" name="bannerImg" type="file" class="form-control">
@@ -175,7 +175,7 @@
                                                 <input id="banner_img_alt_tag" required="" name="banner_img_alt_tag" type="text" class="form-control">
                                             </div>
                                             
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
@@ -233,13 +233,13 @@
                                         </div>
 
 
-
+<!-- 
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarApplyUrl">Scholarship Apply Url</label>
                                                 <input id="scholarApplyUrl"  name="scholarApplyUrl" type="text" class="form-control">
                                             </div> 
-                                        </div>
+                                        </div> -->
                                     <br>
                                     <div class="d-flex flex-wrap gap-2">
                                         <button type="submit" name="add-category" class="btn btn-primary waves-effect waves-light">Save Changes</button>

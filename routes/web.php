@@ -20,7 +20,14 @@ Route::get('/clear', function () {
   });
   
 
+
+  Route::get('index.php', function () {
+    
+    return redirect('/', 301);
+});
+
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('404', function () {return view('404');});
 Route::get('blog-details', function () {return view('blog-details-sidebar');});
 Route::get('scholarships-by-countries/', [HomeController::class, 'scholarshipByCountry']);
@@ -41,7 +48,7 @@ Route::get('faq', function () {return view('faq');});
 Route::get('disclaimer', function () {return view('disclaimer');});
 Route::get('privacy-policy', function () {return view('privacy-policy');});
 Route::get('terms-of-use', function () {return view('terms-of-use');});
-Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
+// Route::get('{slug}/', [HomeController::class, 'ShowScholarDetails']);
 
 
 

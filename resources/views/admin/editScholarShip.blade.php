@@ -155,7 +155,7 @@
                                             
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="bannerImg">Banner Img</label>
                                                 <input id="bannerImg"  name="bannerImg" type="file" class="form-control">
@@ -169,7 +169,7 @@
                                                 <input id="banner_img_alt_tag" value="{{ $Scholarship->banner_img_alt_tag; }}" required="" name="banner_img_alt_tag" type="text" class="form-control">
                                             </div>
                                             
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-md-12">
                                             <div class="mb-3">
@@ -184,12 +184,12 @@
                                                 <textarea id="schema"  name="schema" rows="20" class="form-control">{{ $Scholarship->schemass; }}</textarea>
                                             </div> 
                                         </div>
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="scholarApplyUrl">Scholarship Apply Url</label>
                                                 <input id="scholarApplyUrl" value="{{ $Scholarship->scholarship_website_url; }}"  name="scholarApplyUrl" type="text" class="form-control">
                                             </div> 
-                                        </div>
+                                        </div> -->
                                     <br>
                                     <div class="d-flex flex-wrap gap-2">
                                         <button type="submit" name="add-category" class="btn btn-primary waves-effect waves-light">Save Changes</button>

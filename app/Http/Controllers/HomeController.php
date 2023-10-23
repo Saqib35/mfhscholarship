@@ -39,7 +39,6 @@ class HomeController extends Controller
          
          $posts =AddScholarship::orderBy('created_at', 'desc')->take(10)->get();
         
-  
          return response()->view('rss', [
              'posts' => $posts
          ])->header('Content-Type', 'text/xml');
@@ -101,8 +100,8 @@ class HomeController extends Controller
                 {
                     $banner_img="all-country";
                     $slug="Scholarship Lists";
-                    $title="Your Potential: Navigating Scholarships for Educational Excellence";
-                    $description="Embark on a journey of educational excellence through scholarships. Explore a diverse range of scholarship opportunities, grants, and financial support to fuel your academic aspirations and shape a promising future.";
+                    $title="Government Scholarship Application Guide | MFH Scholarship";
+                    $description="Unlock opportunities for scholarships and funding with our expert guidance on government scholarship application. Choose MFH Scholarship for financial aid.";
                     $keywords="scholarships, education scholarships, academic grants, financial aid, scholarship opportunities, educational funding";
                     $short = 'Scholarships are financial awards given to students to support their education. They are typically based on various criteria such as academic achievement, financial need, extracurricular involvement, community service, specific talents, or personal characteristics. Scholarships can come from a variety of sources including universities, colleges, private organizations, foundations, government agencies, and corporations.'; 
                 
@@ -125,8 +124,8 @@ class HomeController extends Controller
 
                         if($degreeSlug=='internships')
                         {
-                           $title="Launch Your Career: Explore Exciting Internship Opportunities for Practical Experience";
-                           $description="Discover valuable internships that offer real-world experience and skill development. Our comprehensive guide helps you find the perfect internship to kickstart your professional journey and build a strong foundation for your future.";
+                           $title="Student Internship Program | MFH Scholarship";
+                           $description="Get the MFH Scholarship for a rewarding summer internship. Join our student internship program to gain valuable experience and build your future. Contact us.";
                            $keywords="internships, professional intern programs, experiential learning, internship opportunities, practical work experience, career development";
                            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
                            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);

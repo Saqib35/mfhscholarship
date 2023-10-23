@@ -133,7 +133,7 @@
                                             
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label for="blog_banner">Blog Banner Img</label>
                                                 <input id="blog_banner" required="" name="blog_banner" type="file" class="form-control">
@@ -147,7 +147,7 @@
                                                 <input id="blog_banner_alt_tag" required="" name="blog_banner_alt_tag" type="text" class="form-control">
                                             </div>
                                             
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-md-12">
                                             <div class="mb-3">

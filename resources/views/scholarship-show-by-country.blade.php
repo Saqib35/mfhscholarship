@@ -29,9 +29,9 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breadcrumb-wrapper">
-                        <h2 class="breadcrumb-title text-white">
+                        <h1 class="breadcrumb-title text-white">
                             {{ $modifiedString = str_replace('-', ' ', $slug); }}
-                        </h2>
+                        </h1>
                         <ul>
                             <li><a href="{{ url('/') }}" class="text-white">Home</a></li>
                             <li class="text-white">{{ $modifiedString = str_replace('-', ' ', $slug); }}</li>

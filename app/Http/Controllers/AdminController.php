@@ -305,9 +305,9 @@ class AdminController extends Controller
     $addScholarship->scholarship_degree = $encodedScholarDegree;
     $addScholarship->scholarship_description = $request->scholarDecription;
     $addScholarship->scholarship_content = $request->content;
-    $addScholarship->scholarship_website_url = $request->scholarApplyUrl;
+    // $addScholarship->scholarship_website_url = $request->scholarApplyUrl;
     $addScholarship->university_logo_alt_tag = $request->university_logo_alt_tag;
-    $addScholarship->banner_img_alt_tag = $request->banner_img_alt_tag;
+    // $addScholarship->banner_img_alt_tag = $request->banner_img_alt_tag;
     $addScholarship->schemass = $request->schema;
     
    
@@ -413,9 +413,9 @@ class AdminController extends Controller
     $scholarship->scholarship_degree = $encodedScholarDegree;
     $scholarship->scholarship_description = $request->input('scholarDecription');
     $scholarship->scholarship_content = $request->input('content');
-    $scholarship->scholarship_website_url = $request->input('scholarApplyUrl');
+    // $scholarship->scholarship_website_url = $request->input('scholarApplyUrl');
     $scholarship->university_logo_alt_tag = $request->input('university_logo_alt_tag');
-    $scholarship->banner_img_alt_tag = $request->input('banner_img_alt_tag');
+    // $scholarship->banner_img_alt_tag = $request->input('banner_img_alt_tag');
     $scholarship->schemass = $request->schema;
 
     if ($request->hasFile('scholarUniLogo')) {
@@ -458,7 +458,7 @@ class AdminController extends Controller
         $addScholarship->blog_category = $request->blog_category;
         $addScholarship->blog_description = $request->blog_description;
         $addScholarship->blog_img_alt_tag = $request->blog_img_alt_tag;
-        $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
+        // $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
         $addScholarship->blog_content = $request->blog_content;
         $addScholarship->schemass = $request->schema;
 
@@ -584,7 +584,7 @@ class AdminController extends Controller
         $addScholarship->blog_category = $request->blog_category;
         $addScholarship->blog_description = $request->blog_description;
         $addScholarship->blog_img_alt_tag = $request->blog_img_alt_tag;
-        $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
+        // $addScholarship->blog_banner_alt_tag = $request->blog_banner_alt_tag;
         $addScholarship->blog_content = $request->blog_content;
         $addScholarship->schemass = $request->schema;
 
