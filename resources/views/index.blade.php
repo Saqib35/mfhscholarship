@@ -253,10 +253,6 @@
                         </div>
                         </div>
                         <!-- Single Blog End -->
-                        <!-- Content start -->
-                       <p> Navigating the world of academia often presents challenges, especially when it comes to funding one's education. The MFH Scholarship portal stands as a beacon of hope in this regard. Dedicated to bridging the gap between ambitious students and their academic dreams, our platform provides a streamlined Education Scholarship Application process, ensuring deserving candidates can access the financial support they need.</p>
-                        <p>The Lastest Scholarships Program curated by our dedicated team, is consistently updated, guaranteeing students get timely information on the newest scholarship opportunities. Our essential point is to guarantee no meriting student is abandoned because of monetary requirements. </p>
-                       <p>We understand the colossal impact that a scholarship can have on a student's academic way, and we're here to assist you with exploring it. With the MFH Scholarship platform, you're not just applying for financial aid; you're stepping into a community that champions educational success. Dive in and explore the array of opportunities waiting for you.</p>
                     </div>
                  @endforeach  
                
