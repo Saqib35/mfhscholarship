@@ -66,6 +66,13 @@
 
     </style>
     <!-- country show section End -->
+<!-- start content -->
+<div>
+    <p>Navigating the world of academics can often seem like a daunting task, especially when one aspires to study abroad. Understanding this challenge, the MFH Scholarship offers a dedicated portal that caters to those seeking opportunities beyond their homeland. With our curated list, the International Scholarships Application process is simplified and made more accessible.</p>
+<P>At MFH Scholarship, we believe in breaking boundaries and building bridges through education. Our platform stands as a testament to this commitment, guiding aspirants through the maze of opportunities that the world offers. Every International Scholarships Application we feature is meticulously vetted, ensuring that you have access to genuine, rewarding opportunities that can transform your educational journey.</P>
+<p>So, if you've always dreamt of experiencing global education, let the MFH Scholarship be your guiding star. Embark on this exciting journey, and let your aspirations find their wings.</p>
+</div>
+<!-- end content -->
     
 @endsection
 
