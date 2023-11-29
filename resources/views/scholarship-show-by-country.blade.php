@@ -47,9 +47,10 @@
     
         <div class="section section-margin-bottom mt-5">
             <div class="container">
-            
+                 
             <div class="row mt-5">
                 <div class="col-12">
+                <h2 style="font-size:18px;text-align:center;margin-bottom:20px;"><b>{{ $h2 }}</b></h2>
                     <p>{{ $short }}</p>
                   
                 </div>

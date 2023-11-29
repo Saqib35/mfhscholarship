@@ -91,6 +91,7 @@ class HomeController extends Controller
                 $description = $degree->meta_description;
                 $keywords = $degree->meta_keywords; 
                 $short = $degree->short_description; 
+                $h2=$degree->h2;
                 // $degreeSlugs = 'undergraduate-scholarships';
                 $AddScholarship = AddScholarship::whereJsonContains('scholarship_degree', $slug)->paginate(9);
 
@@ -103,8 +104,8 @@ class HomeController extends Controller
                     $title="Government Scholarship Application Guide | MFH Scholarship";
                     $description="Unlock opportunities for scholarships and funding with our expert guidance on government scholarship application. Choose MFH Scholarship for financial aid.";
                     $keywords="scholarships, education scholarships, academic grants, financial aid, scholarship opportunities, educational funding";
-                    $short = 'Scholarships are financial awards given to students to support their education. They are typically based on various criteria such as academic achievement, financial need, extracurricular involvement, community service, specific talents, or personal characteristics. Scholarships can come from a variety of sources including universities, colleges, private organizations, foundations, government agencies, and corporations.'; 
-                
+                    $short = 'Scholarships are financial awards given to students to support their education. They are typically based on various criteria such as academic achievement, financial need, extracurricular involvement, community service, specific talents, or personal characteristics. Scholarships can come from a variety of sources including universities, colleges, private organizations, foundations, government agencies, and corporations.Simplify your scholarship journey with MFH Scholarships curated lists, featuring government scholarship applications. Access a diverse range of funding opportunities to streamline your application process. Stay informed, maximize your chances of success, and pursue your educational goals with ease. Explore our user-friendly platform for a seamless experience in scholarship applications and funding. Start your journey towards academic excellence today.'; 
+                    $h2='Scholarships Program Application';
                     $AddScholarship=AddScholarship::paginate(9);
                   
                  }
@@ -116,7 +117,9 @@ class HomeController extends Controller
                        $title=$countires->meta_title;
                        $description=$countires->meta_description;
                        $keywords=$countires->meta_keywords;
-                        $short = ''; 
+                       $short = $countires->short; 
+                       $h2=$countires->h2;
+                       
                        $AddScholarship=AddScholarship::where('scholarship_country','=',$degreeSlug)->paginate(9);
                    
                     }else{
@@ -128,7 +131,9 @@ class HomeController extends Controller
                            $description="Get the MFH Scholarship for a rewarding summer internship. Join our student internship program to gain valuable experience and build your future. Contact us.";
                            $keywords="internships, professional intern programs, experiential learning, internship opportunities, practical work experience, career development";
                            $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
-                           return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+                           $h2='Summer Internship Program for Students';
+                           $content='Embark on a transformative journey with our Student Internship Program, designed to empower and equip you with valuable skills. Dive into a rewarding experience with our Summer Internship opportunities, where learning meets real-world application. Our internships offer a dynamic environment for students to gain hands-on experience, network with industry professionals, and make meaningful contributions. Elevate your resume, expand your knowledge, and set the stage for a successful career. Explore the diverse range of internships available at MFH Scholarship and take the first step towards a bright future. Seize the opportunity to grow and thrive in your chosen field through our internship programs.';
+                           return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$degreeSlug,'title'=>$title,'description'=>$description,'keywords'=>$keywords,'h2'=>$h2, 'content'=>$content]);
                              
                         }else{
               
@@ -142,7 +147,7 @@ class HomeController extends Controller
 
         }
 
-        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img ,'title'=>$title,'description'=>$description,'keywords'=>$keywords,'short'=>$short]);
+        return view('scholarship-show-by-country',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'banner_img'=>$banner_img ,'title'=>$title,'description'=>$description,'keywords'=>$keywords,'short'=>$short,'h2'=>$h2]);
     
     }
 
@@ -171,6 +176,8 @@ class HomeController extends Controller
             $description="Access a wealth of application resources to enhance your chances of success. Our comprehensive guide provides valuable insights, tips, and tools to help you navigate the application process with confidence and achieve your goals.";
             $keywords="application resources, application tips, application guidelines, application tools, application success, application support";
             $slug=$degreeSlug;
+            $h2='';
+            $content='';
             $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
 
         }else if($degreeSlug=='scholarships-and-study')
@@ -179,6 +186,8 @@ class HomeController extends Controller
             $description="Discover the perfect blend of scholarships and study programs to fuel your educational journey. Our comprehensive guide offers insights into securing financial aid and finding the right study path for your academic and career aspirations.";
             $keywords="scholarships and study, educational funding, study programs, scholarship opportunities, academic financial aid, higher education support";
             $slug=$degreeSlug;
+            $h2='';
+            $content='';
             $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
         
         }else if($degreeSlug=='employment-and-profession')
@@ -187,6 +196,8 @@ class HomeController extends Controller
             $description="Explore a world of possibilities in employment and profession fields. Our comprehensive guide provides insights into career growth, job opportunities, and professional development, empowering you to thrive in your chosen profession.";
             $keywords="employment and profession, career opportunities, professional growth, job pathways, career development, job prospects, professional success";
             $slug=$degreeSlug;
+            $h2='';
+            $content='';
             $AddScholarship=Blogs::where('blog_category','=',$degreeSlug)->paginate(9);
         
         }
@@ -196,7 +207,7 @@ class HomeController extends Controller
         
         }
 
-        return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+        return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords , 'h2'=> $h2,'content'=>$content]);
     
     }
 
@@ -207,9 +218,10 @@ class HomeController extends Controller
             $description="Access a wealth of application resources to enhance your chances of success. Our comprehensive guide provides valuable insights, tips, and tools to help you navigate the application process with confidence and achieve your goals.";
             $keywords="application resources, application tips, application guidelines, application tools, application success, application support";
             $slug='Our  Blogs';
+            $h2='';
             $AddScholarship=Blogs::where('blog_category','=',['our-blogs'])->paginate(9);
 
-            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords]);
+            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords, 'h2'=> $h2]);
     
       
     }

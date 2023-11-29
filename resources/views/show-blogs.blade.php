@@ -46,6 +46,13 @@
     
         <div class="section section-margin-bottom mt-5">
             <div class="container">
+            <div class="row mt-5">
+                <div class="col-12">
+                <h2 style="font-size:18px;text-align:center;margin-bottom:20px;"><b>{{ $h2 }}</b></h2>
+                <p>{{ $content }}</p>
+                </div>
+            </div>
+            <br>
             @if(count($AddScholarship) > 0)
                 <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
                 @foreach($AddScholarship as $AddScholarships)
