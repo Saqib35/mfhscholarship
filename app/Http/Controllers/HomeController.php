@@ -220,8 +220,8 @@ class HomeController extends Controller
             $slug='Our  Blogs';
             $h2='';
             $AddScholarship=Blogs::where('blog_category','=',['our-blogs'])->paginate(9);
-
-            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords, 'h2'=> $h2]);
+            $content='';    
+            return view('show-blogs',['AddScholarship'=>$AddScholarship,'slug'=>$slug,'title'=>$title,'description'=>$description,'keywords'=>$keywords, 'h2'=> $h2,'content'=>$content]);
     
       
     }

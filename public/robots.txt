@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+
+Sitemap: https://mfhscholarship.com/sitemap.xml

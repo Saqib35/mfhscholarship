@@ -1,116 +1,198 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://mfhscholarship.com/</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://mfhscholarship.com/</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/scholarships-by-countries</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/scholarships-by-countries</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/scholarship-lists</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/scholarship-lists</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/undergraduate-scholarships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/undergraduate-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/masters-scholarships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/masters-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/doctoral-scholarships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/doctoral-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/postdoctoral-scholarships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/postdoctoral-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/training-scholarships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/training-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/internships</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/internships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/blog/application-resources</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/blog/application-resources</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/blog/scholarships-and-study</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/blog/scholarships-and-study</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/category/blog/employment-and-profession</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/category/blog/employment-and-profession</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/about</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/about</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/contact</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/contact</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/faq</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/next-scholarship</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/disclaimer</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/daad-scholarships-germany</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/privacy-policy</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/university-of-brighton-sports-scholarships</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mfhscholarship.com/terms-of-use</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/horatio-alger-scholarship-usa</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-  <loc>https://mfhscholarship.com/beijing-government-scholarship-2024-fully-funded</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/holland-scholarship</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
 <url>
-  <loc>https://mfhscholarship.com/google-summer-internship</loc>
-  <lastmod>2023-08-13T05:04:00+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://mfhscholarship.com/gates-cambridge-scholarship</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
 </url>
-
-
-
-
+<url>
+<loc>https://mfhscholarship.com/fulbright-scholarships-usa</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/cameron-impact-scholarship-2024</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/aga-khan-foundation-scholarships-2024</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/beijing-government-scholarship-2024-fully-funded</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/faq</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/disclaimer</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/privacy-policy</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/terms-of-use</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-united-states</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-china</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-germany</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-japan</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-netherlands</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarships-in-united-kingdom</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/chevening-scholarships-uk</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarship-lists?page=2</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/google-summer-internship</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/microsoft-internship-2024</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mfhscholarship.com/category/scholarship-lists?page=1</loc>
+<lastmod>2023-12-05T12:56:05+00:00</lastmod>
+<priority>0.51</priority>
+</url>
 </urlset>
