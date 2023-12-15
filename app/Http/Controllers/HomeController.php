@@ -37,7 +37,7 @@ class HomeController extends Controller
     {
           
          
-         $posts =AddScholarship::orderBy('created_at', 'desc')->take(10)->get();
+         $posts =AddScholarship::orderBy('created_at', 'desc')->get();
         
          return response()->view('rss', [
              'posts' => $posts
